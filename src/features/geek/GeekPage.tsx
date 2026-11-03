@@ -161,16 +161,25 @@ export const GeekPage: React.FC = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-4 border-t border-slate-800">
+            {/* CTA Buttons */}
+            <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row gap-2.5">
               <a
                 href={cat.registrationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full maker-btn-primary py-2.5 text-xs uppercase flex items-center justify-center gap-2"
+                className="flex-1 maker-btn-primary py-2.5 text-xs uppercase flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Inscrever-se</span>
+              </a>
+              <a
+                href={cat.rulesPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 maker-btn-secondary py-2.5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>Ver Edital</span>
               </a>
             </div>
           </div>

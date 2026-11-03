@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TOURNAMENTS_DATA, EVENT_INFO } from '../../core/constants';
-import { RoboticsTournament } from '../../core/types';
-import { EditalModal } from '../../components/EditalModal';
 import {
   Bot,
   Zap,
@@ -16,9 +14,6 @@ import {
 } from 'lucide-react';
 
 export const TorneioPage: React.FC = () => {
-  const [selectedTournamentForEdital, setSelectedTournamentForEdital] =
-    useState<RoboticsTournament | null>(null);
-
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Zap':
@@ -169,29 +164,21 @@ export const TorneioPage: React.FC = () => {
                     <span>Inscrever Robô</span>
                   </a>
 
-                  <button
-                    onClick={() => setSelectedTournamentForEdital(t)}
+                  <a
+                    href={t.editalPdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="maker-btn-secondary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-1.5"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>Ver Edital</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Edital Modal Dialog */}
-      {selectedTournamentForEdital && (
-        <EditalModal
-          isOpen={true}
-          onClose={() => setSelectedTournamentForEdital(null)}
-          tournamentName={selectedTournamentForEdital.name}
-          category={selectedTournamentForEdital.category}
-        />
-      )}
     </div>
   );
 };

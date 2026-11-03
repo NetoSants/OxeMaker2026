@@ -15,6 +15,7 @@ import {
   Clock,
   Cpu,
   ExternalLink,
+  FileText,
   MapPin,
   Sparkles,
   Users,
@@ -165,15 +166,26 @@ export const InscricoesPage: React.FC = () => {
                 </div>
               </div>
 
-              <a
-                href={tournament.registrationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="maker-btn-primary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
-              >
-                <span>Inscrever equipe</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={tournament.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 maker-btn-primary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
+                >
+                  <span>Inscrever equipe</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={tournament.editalPdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 maker-btn-secondary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Ver Edital</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -216,15 +228,26 @@ export const InscricoesPage: React.FC = () => {
                 </div>
               </div>
 
-              <a
-                href={category.registrationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="maker-btn-primary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
-              >
-                <span>Inscrever-se</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={category.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 maker-btn-primary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
+                >
+                  <span>Inscrever-se</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={category.rulesPdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 maker-btn-secondary py-2.5 px-4 text-xs uppercase flex items-center justify-center gap-2"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Ver Edital</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>
