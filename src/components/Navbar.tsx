@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-emerald-700 font-semibold">● Inscrições até 09/10</span>
+            <span className="text-emerald-700 font-semibold">● Inscrições até 25/11</span>
             <span className="text-slate-500">·</span>
             <span className="text-slate-400">GRE Metropolitana Norte</span>
           </div>

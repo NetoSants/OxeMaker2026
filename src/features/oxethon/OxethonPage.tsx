@@ -64,7 +64,7 @@ export const OxethonPage: React.FC = () => {
           </div>
           <h3 className="text-xl font-heading text-[#0B1330]">Equipes Escolares</h3>
           <p className="text-xs text-slate-300 font-sans">
-            Inscrição de equipes e projetos pelo formulário oficial até 09/10/2026, com
+            Inscrição de equipes e projetos pelo formulário oficial até 25/11/2026, com
             representantes da rede pública de Pernambuco.
           </p>
         </div>
@@ -198,7 +198,7 @@ export const OxethonPage: React.FC = () => {
             <span>Inscrições</span>
           </div>
           <p className="text-sm text-slate-200 font-sans leading-relaxed">
-            Inscrições limitadas por modalidade, até 09 de outubro de 2026.
+            Inscrições limitadas por modalidade, até 25 de novembro de 2026.
           </p>
         </div>
       </div>
@@ -222,7 +222,7 @@ export const OxethonPage: React.FC = () => {
       {/* Final CTA Banner */}
       <div className="text-center p-8 bg-[#0030B5]/20 border-2 border-[#FCC140] rounded-sm maker-shadow-yellow space-y-4">
         <h3 className="text-2xl sm:text-3xl font-heading text-[#0B1330] uppercase">
-          Inscreva Sua Equipe Até 09/10
+          Inscreva Sua Equipe Até 25/11
         </h3>
         <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto font-sans">
           Garanta a vaga da sua escola no Ôxe Maker 2026 e prepare o projeto para o pitch final das

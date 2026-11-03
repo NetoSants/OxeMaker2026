@@ -39,7 +39,7 @@ TEMA 2026: "Vidas, Escolas e Comunidades: Educar para a Promoção da Justiça S
 Fomentar a criatividade e a aplicação prática da robótica e cultura maker entre estudantes da rede pública de Pernambuco.
 
 2. ESPECIFICAÇÕES TÉCNICAS:
-- Inscrições abertas até 09/10/2026, limitadas por modalidade.
+- Inscrições abertas até 25/11/2026, limitadas por modalidade.
 - Credenciamento das 07h00 às 08h00, na frente do evento.
 - Todos os robôs devem respeitar os padrões de segurança e possuir chave geral identificada.
 

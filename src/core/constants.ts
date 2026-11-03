@@ -449,13 +449,13 @@ export const OXETHON_INFO: OxethonInfo = {
     },
   ],
   regulationsSummary: [
-    'As inscrições de equipes e projetos são feitas até 09 de outubro de 2026 pelos formulários oficiais.',
+    'As inscrições de equipes e projetos são feitas até 25 de novembro de 2026 pelos formulários oficiais.',
     'Mais detalhes do regulamento do Hackathon serão divulgados pela coordenação.',
     'Menores de idade devem apresentar autorização dos responsáveis no credenciamento (07h00 às 08h00).',
   ],
   slogan: 'O Hackathon Arretado',
   story:
-    'O Ôxethon é a maratona de desenvolvimento e criação do Ôxe-Maker. Durante 48 horas, equipes multidisciplinares trabalham intensamente para criar soluções tecnológicas que impactem positivamente a comunidade local. É o lugar onde o código encontra a realidade e a inovação acontece na prática.',
+    'O Ôxethon é o hackathon do Ôxe Maker e acontece dentro da programação do evento, no dia 27 de novembro. Equipes multidisciplinares criam soluções tecnológicas que impactem positivamente a comunidade local e apresentam seus projetos no pitch final, às 16h. É o lugar onde o código encontra a realidade e a inovação acontece na prática.',
   registrationUrl: 'https://forms.gle/oxemaker2026-oficineiros',
   regulationsUrl: '#regulamento-oxethon',
   image: img('oxethon.webp'),
@@ -774,12 +774,12 @@ export const FAQ_DATA = [
   {
     question: 'Até quando posso me inscrever?',
     answer:
-      'As inscrições vão até 09 de outubro de 2026 e são feitas em três modalidades: Oficineiros (alunos e professores), Mostra de Projetos (equipes) e Palestrantes.',
+      'As inscrições vão até 25 de novembro de 2026 e abrangem Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-pop), Oficinas Maker, Mostra de Projetos, Ôxethon e Visitantes.',
   },
   {
     question: 'Quais são as modalidades de inscrição?',
     answer:
-      'São três: Oficineiros (para alunos e professores que querem participar das oficinas), Mostra de Projetos (para equipes apresentarem seus projetos à banca) e Palestrantes (para quem deseja palestrar, preferencialmente no formato TED Talks).',
+      'As modalidades estão reunidas na página de Inscrições: Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-pop), Oficinas Maker, Mostra de Projetos, Ôxethon e Visitantes.',
   },
   {
     question: 'Quem pode participar do Ôxe Maker?',
@@ -789,7 +789,7 @@ export const FAQ_DATA = [
   {
     question: 'Como faço para participar das competições?',
     answer:
-      'Acesse a página de Inscrições e escolha entre Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-POP), Oficinas Maker e Oxethon. Confirme as regras da categoria desejada e faça sua inscrição até 09/10/2026. As competições acontecem no dia 27/11, das 14h30 às 15h30.',
+      'Acesse a página de Inscrições e escolha entre Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-POP), Oficinas Maker e Oxethon. Confirme as regras da categoria desejada e faça sua inscrição até 25/11/2026. As competições acontecem no dia 27/11, das 14h30 às 15h30.',
   },
   {
     question: 'Qual é a programação do dia do evento?',

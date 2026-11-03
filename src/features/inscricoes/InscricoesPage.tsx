@@ -116,28 +116,97 @@ export const InscricoesPage: React.FC = () => {
         </p>
       </header>
 
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#FCC140]/20 via-[#F9FDFE] to-[#01B1FD]/15 border-2 border-[#FCC140] rounded-sm p-5 sm:p-7 maker-shadow-yellow">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="space-y-2">
+            <span className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#FCC140]/20 text-[#8A5A04] font-mono-code text-[11px] font-bold uppercase rounded-sm border border-[#FCC140]/60">
+              <Ticket className="w-3.5 h-3.5" />
+              Destaque · Visitantes
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading text-[#0B1330] uppercase">
+              Visite o Ôxe Maker 2026
+            </h2>
+            <p className="text-sm text-slate-300 font-sans max-w-2xl leading-relaxed">
+              Credencie-se para acompanhar o cronograma e as atrações do evento: torneios de
+              robótica, cultura geek, oficinas e Mostra de Projetos.
+            </p>
+            <div className="flex flex-wrap gap-3 text-xs font-mono-code">
+              <Link
+                to="/programacao"
+                className="inline-flex items-center gap-1.5 text-[#0369A1] hover:text-[#8A5A04] transition-colors"
+              >
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Cronograma</span>
+              </Link>
+              <Link
+                to="/geek"
+                className="inline-flex items-center gap-1.5 text-[#0369A1] hover:text-[#8A5A04] transition-colors"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Atrações</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex-shrink-0 md:w-64">
+            {EVENT_INFO.links.visitantesRegistration ? (
+              <a
+                href={EVENT_INFO.links.visitantesRegistration}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <span>Credenciar visitante</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="O formulário de inscrição de visitantes será disponibilizado em breve"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+              >
+                <Clock className="w-4 h-4" />
+                <span>Inscrições em breve</span>
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
       <nav aria-label="Tópicos de inscrição" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {TOPICS.map((topic) => {
           const Icon = topic.icon;
+          const isVisitor = topic.id === 'visitantes';
           return (
             <button
               key={topic.id}
               type="button"
               onClick={() => scrollToTopic(topic.id)}
-              className="group bg-[#F9FDFE] border-2 border-slate-700/80 hover:border-[#FCC140] rounded-sm p-5 transition-all hover:maker-shadow-yellow flex flex-col gap-3 text-left cursor-pointer"
+              className={`group border-2 rounded-sm p-6 transition-all hover:maker-shadow-yellow flex flex-col gap-3 text-left cursor-pointer ${
+                isVisitor
+                  ? 'bg-gradient-to-br from-[#FCC140]/20 via-[#F9FDFE] to-[#01B1FD]/10 border-[#FCC140] maker-shadow-yellow'
+                  : 'bg-[#F9FDFE] border-slate-700/80 hover:border-[#FCC140]'
+              }`}
             >
-              <div className="p-2.5 bg-[#F1F4FB] border border-slate-700 rounded-sm w-fit group-hover:border-[#FCC140] transition-colors">
-                <Icon className="w-5 h-5 text-[#8A5A04]" />
+              <div
+                className={`p-3 border rounded-sm w-fit group-hover:border-[#FCC140] transition-colors ${
+                  isVisitor ? 'bg-[#FCC140]/20 border-[#FCC140]' : 'bg-[#F1F4FB] border-slate-700'
+                }`}
+              >
+                <Icon className="w-6 h-6 text-[#8A5A04]" />
               </div>
-              <div className="space-y-1 flex-1">
-                <span className="block text-base font-heading text-[#0B1330] uppercase group-hover:text-[#8A5A04] transition-colors">
+              <div className="space-y-1.5 flex-1">
+                <span className="block text-lg sm:text-xl font-heading text-[#0B1330] uppercase group-hover:text-[#8A5A04] transition-colors">
                   {topic.title}
                 </span>
-                <span className="block text-xs text-slate-400 font-sans">{topic.description}</span>
+                <span className="block text-sm text-slate-400 font-sans leading-relaxed">
+                  {topic.description}
+                </span>
               </div>
-              <span className="inline-flex items-center gap-2 text-[11px] font-mono-code uppercase font-bold text-[#0369A1] group-hover:text-[#8A5A04] transition-colors">
-                Ir para inscrição
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono-code uppercase font-bold text-[#0369A1] group-hover:text-[#8A5A04] transition-colors">
+                {isVisitor ? 'Credenciar visitante' : 'Ir para inscrição'}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
           );
@@ -288,7 +357,7 @@ export const InscricoesPage: React.FC = () => {
               As oficinas de 2026 já têm propostas
             </h3>
             <p className="text-sm text-slate-400 font-sans leading-relaxed">
-              As submissões de propostas para a 6ª edição foram encerradas em 09/10/2026. Confira
+              As submissões de propostas para a 6ª edição seguem abertas até 25/11/2026. Confira
               os temas, as escolas proponentes e os programas previstos na página de Oficinas.
             </p>
           </div>

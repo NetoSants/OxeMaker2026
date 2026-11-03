@@ -115,7 +115,7 @@ Todos os textos, datas, nomes e links de inscrição estão concentrados no arqu
 | **Grade de horários do evento** | Array `SCHEDULE_DATA` (blocos Manhã/Tarde) |
 | **Categorias dos torneios de robótica** | Array `TOURNAMENTS_DATA` (3 categorias) |
 | **Categorias geek (Cosplay e K-pop)** | Array `GEEK_CATEGORIES` |
-| **Desafios e trilhas do Oxethon 48h** | Objeto `OXETHON_INFO` |
+| **Desafios e trilhas do Oxethon** | Objeto `OXETHON_INFO` |
 | **Propostas e detalhes das oficinas** | Array `WORKSHOPS_DATA` |
 | **Linha do tempo histórica (2021 a 2026)** | Array `TIMELINE_DATA` |
 | **Texto de homenagem à Fundadora** | Objeto `FOUNDER_TRIBUTE` |
