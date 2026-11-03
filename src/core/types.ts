@@ -41,6 +41,7 @@ export interface EventGeneralInfo {
     oficineirosRegistration: string;
     mostraRegistration: string;
     palestrantesRegistration: string;
+    visitantesRegistration: string;
   };
 }
 

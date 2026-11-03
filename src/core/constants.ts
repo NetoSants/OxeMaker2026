@@ -82,8 +82,9 @@ export const EVENT_INFO: EventGeneralInfo = {
   },
   links: {
     oficineirosRegistration: 'https://forms.gle/oxemaker2026-oficineiros',
-    mostraRegistration: 'https://forms.gle/oxemaker2026-mostra-de-projetos',
+    mostraRegistration: '',
     palestrantesRegistration: 'https://forms.gle/oxemaker2026-palestrantes',
+    visitantesRegistration: '',
   },
 };
 
@@ -353,16 +354,18 @@ export const TOURNAMENTS_DATA: RoboticsTournament[] = [
   },
   {
     id: 'sumo',
-    name: 'Sumô de Robôs (1kg e 3kg)',
+    name: 'Sumô de Robôs',
     category: 'Arremesso & Estratégia',
-    description: 'Duelos intensos em ringue circular (dohyo). O objetivo é localizar o oponente usando sensores e empurrá-lo para fora da borda branca.',
+    description: 'Duelos entre dois robôs em uma arena, com o objetivo de arrastar o adversário para fora. Cada batalha pode ter até 3 rounds, vencendo quem conquistar 2 primeiro.',
     requirements: [
-      'Subcategorias: 1kg (Mini-Sumô) e 3kg (Sumô Autônomo e RC)',
-      'Início com delay regulamentar de 5 segundos após partida',
-      'Pás sem pontas cortantes nocivas à integridade dos alunos',
-      'Dimensões na largada: 20x20cm (altura livre)',
+      'Carenagem sem metal: use madeira, papelão, plástico e outros materiais',
+      'Apenas motor DC 3V–6V amarelo, sem modificações na caixa de redução',
+      'Peso máximo de 1500g',
+      'Dimensões máximas: 25cm de comprimento × 25cm de largura × 20cm de altura, incluindo arma passiva',
+      'Armas funcionais proibidas; armas passivas devem estar travadas externamente e visíveis ao juiz',
+      'Proibido usar ligas, materiais grudentos ou fitas para aumentar a aderência das rodas',
     ],
-    arenaDetails: 'Dohyo de aço/madeira preta de 154cm de diâmetro com borda de 5cm na cor branca brilhante.',
+    arenaDetails: 'Arena preferencialmente circular, com 70cm a 150cm de diâmetro. A marcação de início fica entre 10cm e 30cm da linha de contorno.',
     maxTeamSize: 4,
     scheduleTime: '27/11 · Competições & Geek (14h30 - 15h30)',
     editalPdfUrl: 'https://drive.google.com/file/d/1PtF4WqOwho7xJwdD9exidnyD51Qw-SgD/view?usp=drive_link',

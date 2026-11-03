@@ -28,6 +28,8 @@ import {
   Users,
   Compass,
   Lightbulb,
+  Presentation,
+  Ticket,
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -54,11 +56,25 @@ export const HomePage: React.FC = () => {
       icon: <Wrench className="w-5 h-5 text-[#8A5A04]" />,
     },
     {
+      id: 'mostra',
+      title: 'Mostra de Projetos',
+      description: 'Inscreva seu projeto de tecnologia para a feira de ciências do evento.',
+      href: '/inscricoes#mostra',
+      icon: <Presentation className="w-5 h-5 text-[#0369A1]" />,
+    },
+    {
       id: 'oxethon',
       title: 'Oxethon',
       description: 'Monte sua equipe para o hackathon e apresente o pitch no dia do evento.',
       href: '/inscricoes#oxethon',
       icon: <Cpu className="w-5 h-5 text-[#0369A1]" />,
+    },
+    {
+      id: 'visitantes',
+      title: 'Visitantes',
+      description: 'Garanta seu credenciamento e acesse o cronograma e as atrações do evento.',
+      href: '/inscricoes#visitantes',
+      icon: <Ticket className="w-5 h-5 text-[#8A5A04]" />,
     },
   ];
 
@@ -470,7 +486,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =====================================================================
-          5.5 INSCRIÇÕES (4 TÓPICOS)
+          5.5 INSCRIÇÕES (6 TÓPICOS)
          ===================================================================== */}
       <section id="inscricoes" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -483,12 +499,12 @@ export const HomePage: React.FC = () => {
             </h2>
           </div>
           <p className="text-sm text-slate-400 max-w-md">
-            Quatro caminhos para participar: torneios de robótica, cultura geek, oficinas maker e
-            Oxethon.
+            Seis caminhos para participar: torneios de robótica, cultura geek, oficinas maker,
+            Mostra de Projetos, Oxethon e credenciamento de visitantes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {registrationOptions.map((option) => (
             <Link
               key={option.id}

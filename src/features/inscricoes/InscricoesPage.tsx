@@ -18,7 +18,9 @@ import {
   ExternalLink,
   FileText,
   MapPin,
+  Presentation,
   Sparkles,
+  Ticket,
   Users,
   Wrench,
 } from 'lucide-react';
@@ -43,10 +45,22 @@ const TOPICS = [
     icon: Wrench,
   },
   {
+    id: 'mostra',
+    title: 'Mostra de Projetos',
+    description: 'Feira de ciências e tecnologia',
+    icon: Presentation,
+  },
+  {
     id: 'oxethon',
     title: 'Oxethon',
     description: 'Hackathon e pitch final',
     icon: Cpu,
+  },
+  {
+    id: 'visitantes',
+    title: 'Visitantes',
+    description: 'Credenciamento, cronograma e atrações',
+    icon: Ticket,
   },
 ];
 
@@ -102,7 +116,7 @@ export const InscricoesPage: React.FC = () => {
         </p>
       </header>
 
-      <nav aria-label="Tópicos de inscrição" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <nav aria-label="Tópicos de inscrição" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {TOPICS.map((topic) => {
           const Icon = topic.icon;
           return (
@@ -312,6 +326,78 @@ export const InscricoesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Mostra de Projetos */}
+      <section className="space-y-6">
+        <SectionHeading
+          id="mostra"
+          icon={<Presentation className="w-6 h-6 text-[#0369A1]" />}
+          eyebrow="Feira de Ciências"
+          title="Mostra de Projetos"
+          description="Apresente seu projeto de tecnologia e inovação para a banca e para os visitantes do evento."
+        />
+
+        <div className="bg-[#F9FDFE] border-2 border-slate-700/80 rounded-sm p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          <div className="lg:col-span-2 space-y-3">
+            <span className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#01B1FD]/15 text-[#0369A1] font-mono-code text-[11px] font-bold rounded-sm border border-[#01B1FD]/40">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Inscrições de equipes
+            </span>
+            <h3 className="text-2xl font-heading text-[#0B1330]">
+              Mostre seu projeto na feira de ciências
+            </h3>
+            <p className="text-sm text-slate-400 font-sans leading-relaxed">
+              A Mostra de Projetos reúne trabalhos de tecnologia desenvolvidos por estudantes da
+              rede estadual, com apresentação para a banca avaliadora e para o público visitante.
+            </p>
+            <ul className="space-y-1.5 text-xs text-slate-300 font-sans">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
+                <span>Projetos de robótica, automação, inteligência artificial, sustentabilidade e cultura maker</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
+                <span>Apresentação para banca e visitantes durante a programação do dia 27/11</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
+                <span>Equipes de escolas da rede estadual, com orientação de professores</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-1 flex flex-col gap-2">
+            {EVENT_INFO.links.mostraRegistration ? (
+              <a
+                href={EVENT_INFO.links.mostraRegistration}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <span>Inscrever projeto</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="O formulário de inscrição de projetos será disponibilizado em breve"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+              >
+                <Clock className="w-4 h-4" />
+                <span>Inscrições em breve</span>
+              </button>
+            )}
+            <Link
+              to="/programacao"
+              className="maker-btn-secondary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+            >
+              <span>Ver programação</span>
+              <Calendar className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Oxethon */}
       <section className="space-y-6">
         <SectionHeading
@@ -361,6 +447,94 @@ export const InscricoesPage: React.FC = () => {
                 </a>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visitantes */}
+      <section className="space-y-6">
+        <SectionHeading
+          id="visitantes"
+          icon={<Ticket className="w-6 h-6 text-[#8A5A04]" />}
+          eyebrow="Credenciamento"
+          title="Visitantes"
+          description="Garanta seu credenciamento e acompanhe o cronograma e as atrações do Ôxe Maker 2026."
+        />
+
+        <div className="bg-gradient-to-r from-[#F9FDFE] to-[#FCC140]/10 border-2 border-[#FCC140]/60 rounded-sm p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          <div className="lg:col-span-2 space-y-3">
+            <span className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#F1F4FB] text-[#8A5A04] font-mono-code text-[11px] font-bold rounded-sm border border-slate-700">
+              <Ticket className="w-3.5 h-3.5" />
+              Entrada gratuita
+            </span>
+            <h3 className="text-2xl font-heading text-[#0B1330]">
+              Credencie-se para visitar o evento
+            </h3>
+            <p className="text-sm text-slate-400 font-sans leading-relaxed">
+              A inscrição de visitantes ajuda a organização a receber escolas, famílias e
+              comunidade. Confira abaixo o cronograma e as principais atrações do dia.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono-code text-slate-300 pt-1">
+              <Link
+                to="/programacao"
+                className="flex items-center gap-2 p-2.5 bg-[#F1F4FB] border border-slate-700 rounded-sm hover:border-[#FCC140] hover:text-[#8A5A04] transition-colors"
+              >
+                <Calendar className="w-4 h-4 text-[#8A5A04]" />
+                <span>Cronograma completo</span>
+              </Link>
+              <Link
+                to="/torneio"
+                className="flex items-center gap-2 p-2.5 bg-[#F1F4FB] border border-slate-700 rounded-sm hover:border-[#FCC140] hover:text-[#8A5A04] transition-colors"
+              >
+                <Bot className="w-4 h-4 text-[#0369A1]" />
+                <span>Torneios de robótica</span>
+              </Link>
+              <Link
+                to="/geek"
+                className="flex items-center gap-2 p-2.5 bg-[#F1F4FB] border border-slate-700 rounded-sm hover:border-[#FCC140] hover:text-[#8A5A04] transition-colors"
+              >
+                <Sparkles className="w-4 h-4 text-[#0369A1]" />
+                <span>Cultura Geek</span>
+              </Link>
+              <Link
+                to="/oficinas"
+                className="flex items-center gap-2 p-2.5 bg-[#F1F4FB] border border-slate-700 rounded-sm hover:border-[#FCC140] hover:text-[#8A5A04] transition-colors"
+              >
+                <Wrench className="w-4 h-4 text-[#8A5A04]" />
+                <span>Oficinas Maker</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-1 flex flex-col gap-2">
+            {EVENT_INFO.links.visitantesRegistration ? (
+              <a
+                href={EVENT_INFO.links.visitantesRegistration}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <span>Inscrever-se como visitante</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="O formulário de inscrição de visitantes será disponibilizado em breve"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+              >
+                <Clock className="w-4 h-4" />
+                <span>Inscrições em breve</span>
+              </button>
+            )}
+            <Link
+              to="/programacao"
+              className="maker-btn-secondary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+            >
+              <span>Ver cronograma</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
