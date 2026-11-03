@@ -6,6 +6,7 @@ import {
   OXETHON_INFO,
   TOURNAMENTS_DATA,
   WORKSHOPS_DATA,
+  WORKSHOPS_REGISTRATION_URL,
 } from '../../core/constants';
 import {
   ArrowRight,
@@ -278,7 +279,28 @@ export const InscricoesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col gap-2">
+            {WORKSHOPS_REGISTRATION_URL ? (
+              <a
+                href={WORKSHOPS_REGISTRATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <span>Inscrever-se nas oficinas</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="O formulário de inscrição será disponibilizado em breve"
+                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+              >
+                <Clock className="w-4 h-4" />
+                <span>Inscrições em breve</span>
+              </button>
+            )}
             <Link
               to="/oficinas"
               className="maker-btn-secondary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"

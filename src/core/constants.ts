@@ -463,6 +463,8 @@ export const OXETHON_INFO: OxethonInfo = {
  * OFICINA OFICIAL (27 DE NOVEMBRO DE 2026)
  * ============================================================================
  */
+export const WORKSHOPS_REGISTRATION_URL = '';
+
 export const WORKSHOPS_DATA: Workshop[] = [
   {
     id: 'arduino-tinkercad-abp',

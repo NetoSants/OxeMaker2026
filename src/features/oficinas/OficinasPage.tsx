@@ -1,6 +1,6 @@
 import React from 'react';
-import { WORKSHOPS_DATA } from '../../core/constants';
-import { Wrench, Clock, MapPin, Users, BookOpen, School, Laptop } from 'lucide-react';
+import { WORKSHOPS_DATA, WORKSHOPS_REGISTRATION_URL } from '../../core/constants';
+import { Wrench, Clock, MapPin, Users, BookOpen, School, Laptop, Sparkles } from 'lucide-react';
 
 export const OficinasPage: React.FC = () => {
   return (
@@ -18,6 +18,29 @@ export const OficinasPage: React.FC = () => {
           Nove propostas enviadas por escolas da rede estadual para a 6ª edição. A programação
           final, os horários e a grade de oficinas serão confirmados pela organização.
         </p>
+        <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+          {WORKSHOPS_REGISTRATION_URL ? (
+            <a
+              href={WORKSHOPS_REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="maker-btn-primary py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Inscrever-se nas oficinas</span>
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title="O formulário de inscrição será disponibilizado em breve"
+              className="maker-btn-primary py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+            >
+              <Clock className="w-3.5 h-3.5" />
+              <span>Inscrições em breve</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Workshop Proposal Cards */}
