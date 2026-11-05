@@ -7,7 +7,6 @@ import {
 } from '../../core/constants';
 import { AnimatedCounter } from '../../components/AnimatedCounter';
 import { img } from '../../core/images';
-import { CalangoMascot } from '../../components/CalangoMascot';
 import {
   History,
   Heart,
@@ -62,7 +61,13 @@ export const SobrePage: React.FC = () => {
         </div>
 
         <div className="lg:col-span-4 flex flex-col items-center gap-3">
-          <CalangoMascot size="lg" animated={false} />
+          <img
+            src={img('calango-logo.webp')}
+            alt="Calango mascote do Ôxe Maker"
+            className="w-48 h-48 object-contain"
+            loading="lazy"
+            decoding="async"
+          />
           <span className="px-2.5 py-1 bg-[#FCC140] text-[#050D34] font-mono-code text-xs font-bold rounded-sm uppercase tracking-wider">
             Maker de Raça!
           </span>
