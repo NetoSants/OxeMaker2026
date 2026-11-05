@@ -852,10 +852,15 @@ export const TIMELINE_DATA: TimelineMilestone[] = [
 export const FOUNDER_TRIBUTE: FounderTribute = {
   name: 'Lidyane Lira',
   role: 'Fundadora do Ôxe Maker',
-  title: 'Idealizadora da Mostra de Robótica Educacional',
+  title: 'Idealizadora da Mostra de Robótica e Cultura Maker Educacional',
+  quote: 'Lidyane Lira: a semente, a bússola e a força que impulsiona o Ôxe Maker.',
   bio: [
-    'Lidyane Lira é a fundadora do Ôxe Maker, a Mostra de Robótica Educacional da GRE Metropolitana Norte que, desde 2021, leva robótica, cultura maker e protagonismo juvenil para as escolas da rede pública de Pernambuco.',
-    'Sua dedicação é a bússola ética e pedagógica de cada edição do evento, que em 2026 chega à sua 6ª edição.',
+    'Desde 2021, Lidyane Lira, idealizadora da Mostra de Robótica e Cultura Maker Educacional da GRE Metropolitana Norte, vem transformando a curiosidade dos estudantes da rede pública de Pernambuco em oportunidades de aprendizagem, inovação, ciência, tecnologia e protagonismo juvenil.',
+    'Com dedicação, sensibilidade e compromisso com a educação, semeou uma iniciativa que cresceu, ganhou identidade e se consolidou ao longo dos anos. Em 2026, o Ôxe Maker celebra sua histórica 6ª edição, reafirmando seu papel como espaço de criatividade, experimentação, compartilhamento de conhecimentos e valorização da cultura maker.',
+    'Mais do que construir robôs e desenvolver projetos tecnológicos, Lidyane idealizou um movimento educacional que carrega a identidade e o orgulho nordestino, mostrando que a inovação também nasce da nossa cultura, da nossa criatividade e da capacidade de transformar ideias em realidade. Afinal, quando a tecnologia funciona, a gente celebra do nosso jeito: "Ôxe, funcionou!"',
+    'Mas nenhuma trajetória se constrói sozinha. Mais do que idealizar e conduzir essa jornada, Lidyane contou com uma equipe extraordinária, que acreditou no projeto e caminhou ao seu lado. Fica aqui o mais sincero agradecimento a todos os CGIPs e CGEMPs que, de 2021 até hoje, compartilharam ideias, desafios, esforços, afetos e sonhos para tornar o Ôxe Maker possível.',
+    'Cada edição carrega um pouco de cada pessoa que contribuiu para essa história. O Ôxe Maker é fruto de uma construção coletiva, de parcerias fortalecidas e do compromisso de quem acredita que a educação pode transformar vidas.',
+    'Porque algumas sementes florescem em projetos, outras em oportunidades, e algumas se transformam em movimentos capazes de inspirar gerações. O Ôxe Maker é tudo isso!',
   ],
   imagePlaceholder: img('foto-lidy.webp'),
 };
