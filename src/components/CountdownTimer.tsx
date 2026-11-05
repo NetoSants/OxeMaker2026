@@ -83,7 +83,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
     <div className={`flex flex-col items-center ${className}`}>
       <div className="flex items-center gap-2 text-xs font-mono-code text-[#0369A1] uppercase tracking-wider mb-2.5">
         <span className="w-2 h-2 rounded-full bg-[#FCC140] animate-pulse" />
-        <span>Contagem Regressiva para o Credenciamento · 27/11 às 07h00</span>
+        <span>Contagem Regressiva para o Credenciamento · 02/12 às 07h00</span>
       </div>
 
       <div className="grid grid-cols-4 gap-2 sm:gap-3.5">

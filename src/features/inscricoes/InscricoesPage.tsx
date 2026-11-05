@@ -425,7 +425,7 @@ export const InscricoesPage: React.FC = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
-                <span>Apresentação para banca e visitantes durante a programação do dia 27/11</span>
+                <span>Apresentação para banca e visitantes durante a programação do dia 02/12</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
@@ -474,7 +474,7 @@ export const InscricoesPage: React.FC = () => {
           icon={<Cpu className="w-6 h-6 text-[#0369A1]" />}
           eyebrow="Hackathon"
           title="Oxethon"
-          description="Monte sua equipe, desenvolva uma solução e apresente o pitch no dia 27 de novembro."
+          description="Monte sua equipe, desenvolva uma solução e apresente o pitch no dia 02 de dezembro."
         />
 
         <div className="bg-gradient-to-r from-[#F9FDFE] to-[#0030B5]/15 border-2 border-[#01B1FD] rounded-sm maker-shadow-cyan p-6 sm:p-8">

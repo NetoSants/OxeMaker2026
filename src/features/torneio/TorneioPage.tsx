@@ -31,7 +31,7 @@ export const TorneioPage: React.FC = () => {
       <div className="space-y-3 text-center sm:text-left border-b border-slate-800 pb-8">
         <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#8A5A04] uppercase font-bold tracking-wider">
           <Bot className="w-4 h-4" />
-          <span>Competições · 27 de Novembro · {EVENT_INFO.location.venue}</span>
+          <span>Competições · 02 de Dezembro · {EVENT_INFO.location.venue}</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-heading font-black text-[#0B1330] uppercase tracking-tight">
           Torneios de Robótica 2026
@@ -51,7 +51,7 @@ export const TorneioPage: React.FC = () => {
               Credenciamento e Regras Técnicas:
             </span>
             <p>
-              As equipes devem estar credenciadas das 07h00 às 08h00 do dia 27/11. Todos os robôs
+              As equipes devem estar credenciadas das 07h00 às 08h00 do dia 02/12. Todos os robôs
               devem respeitar os padrões de segurança e possuir chave geral identificada.
             </p>
           </div>

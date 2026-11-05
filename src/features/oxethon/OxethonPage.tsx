@@ -161,7 +161,7 @@ export const OxethonPage: React.FC = () => {
                 Cerimônia de Premiação Geral
               </h4>
               <span className="text-xs font-mono-code text-[#8A5A04] block my-1">
-                Sexta, 27/11 · 17h00 às 18h00
+                Quarta, 02/12 · 17h00 às 18h00
               </span>
               <p className="text-xs text-slate-300 font-sans leading-relaxed">
                 Entrega de prêmios, encerramento e foto oficial do evento.
