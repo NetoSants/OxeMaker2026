@@ -600,6 +600,24 @@ export const WORKSHOPS_DATA: Workshop[] = [
     equipment: ['Projetor', 'Extensão', 'Internet'],
     software: 'Canva',
   },
+  {
+    id: 'mundo-3d',
+    title: 'Mundo 3D',
+    description:
+      'Oficina de introdução ao universo 3D, com fundamentos da modelagem e da percepção espacial. A atividade combina demonstrações e práticas com caneta 3D e óculos de realidade virtual Meta Quest para explorar criação digital, tridimensionalidade e experiências imersivas.',
+    schedule: '27 de novembro · horário a definir',
+    room: 'Salas de oficina · ETE José de Alencar',
+    targetAudience: 'Estudantes e professores da rede estadual.',
+    instructor: {
+      name: 'João Brasil',
+      role: 'Instrutor',
+      institution: '+maker',
+      bio: 'João Brasil integra a +maker e conduz a oficina Mundo 3D.',
+    },
+    materialsProvided: ['Caneta 3D', 'Óculos de realidade virtual Meta Quest'],
+    equipment: ['Caneta 3D', 'Meta Quest'],
+    software: 'Aplicativos do Meta Quest',
+  },
 ];
 
 /**

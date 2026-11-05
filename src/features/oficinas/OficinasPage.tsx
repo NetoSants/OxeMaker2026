@@ -1,6 +1,6 @@
 import React from 'react';
 import { WORKSHOPS_DATA, WORKSHOPS_REGISTRATION_URL } from '../../core/constants';
-import { Wrench, Clock, MapPin, Users, BookOpen, School, Laptop, Sparkles } from 'lucide-react';
+import { Wrench, Clock, MapPin, Users, BookOpen, School, Laptop, Sparkles, User } from 'lucide-react';
 
 export const OficinasPage: React.FC = () => {
   return (
@@ -15,8 +15,8 @@ export const OficinasPage: React.FC = () => {
           Oficinas Propostas
         </h1>
         <p className="text-slate-300 text-sm sm:text-base max-w-3xl font-sans">
-          Nove propostas enviadas por escolas da rede estadual para a 6ª edição. A programação
-          final, os horários e a grade de oficinas serão confirmados pela organização.
+          {WORKSHOPS_DATA.length} propostas recebidas para a 6ª edição. A programação final, os
+          horários e a grade de oficinas serão confirmados pela organização.
         </p>
         <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
           {WORKSHOPS_REGISTRATION_URL ? (
@@ -66,6 +66,15 @@ export const OficinasPage: React.FC = () => {
               <h2 className="text-xl sm:text-2xl font-heading text-[#0B1330] group-hover:text-[#8A5A04] transition-colors">
                 {ws.title}
               </h2>
+
+              {ws.instructor && (
+                <p className="flex items-center gap-1.5 text-xs font-mono-code text-[#0369A1]">
+                  <User className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>
+                    {ws.instructor.name} · {ws.instructor.institution}
+                  </span>
+                </p>
+              )}
             </div>
 
             <p className="text-sm text-slate-300 font-sans leading-relaxed">{ws.description}</p>
