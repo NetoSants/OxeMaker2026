@@ -1,6 +1,6 @@
 import React from 'react';
 import { WORKSHOPS_DATA, WORKSHOPS_REGISTRATION_URL } from '../../core/constants';
-import { Wrench, Clock, MapPin, Users, BookOpen, School, Laptop, Sparkles, User } from 'lucide-react';
+import { Wrench, Clock, MapPin, Users, BookOpen, School, Sparkles, User } from 'lucide-react';
 
 export const OficinasPage: React.FC = () => {
   return (
@@ -71,7 +71,7 @@ export const OficinasPage: React.FC = () => {
                 <p className="flex items-center gap-1.5 text-xs font-mono-code text-[#0369A1]">
                   <User className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>
-                    {ws.instructor.name} · {ws.instructor.institution}
+                    {ws.instructor.name} - {ws.instructor.institution}
                   </span>
                 </p>
               )}
@@ -103,16 +103,6 @@ export const OficinasPage: React.FC = () => {
                 </span>
                 <span className="font-bold text-[#0B1330]">{ws.targetAudience}</span>
               </div>
-
-              {ws.software && (
-                <div className="sm:col-span-2 border-t border-slate-800 pt-2">
-                  <span className="flex items-center gap-1.5 text-slate-400 uppercase text-[10px] font-bold mb-1">
-                    <Laptop className="w-3.5 h-3.5 text-[#8A5A04]" />
-                    Programa / Software
-                  </span>
-                  <span className="font-bold text-[#0B1330]">{ws.software}</span>
-                </div>
-              )}
             </div>
 
             <p className="flex items-center gap-1.5 text-[10px] font-mono-code text-slate-400">
