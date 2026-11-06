@@ -10,7 +10,7 @@ export interface EventGeneralInfo {
   dates: {
     display: string;
     day1: string;
-    isoStartDate: string; // "2026-12-02T07:00:00-03:00"
+    isoStartDate: string; // ISO com timezone do evento
     timeRange: string;
   };
   location: {

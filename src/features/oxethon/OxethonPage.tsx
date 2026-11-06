@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { OXETHON_INFO, EVENT_INFO } from '../../core/constants';
+import { EVENT_DATE, PROGRAM_TIMES, REGISTRATION_DEADLINE } from '../../core/eventMeta';
 import {
   Cpu,
   Clock,
@@ -64,7 +65,7 @@ export const OxethonPage: React.FC = () => {
           </div>
           <h3 className="text-xl font-heading text-[#0B1330]">Equipes Escolares</h3>
           <p className="text-xs text-slate-300 font-sans">
-            Inscrição de equipes e projetos pelo formulário oficial até 25/11/2026, com
+            Inscrição de equipes e projetos pelo formulário oficial até {REGISTRATION_DEADLINE.shortWithYear}, com
             representantes da rede pública de Pernambuco.
           </p>
         </div>
@@ -161,7 +162,7 @@ export const OxethonPage: React.FC = () => {
                 Cerimônia de Premiação Geral
               </h4>
               <span className="text-xs font-mono-code text-[#8A5A04] block my-1">
-                Quarta, 02/12 · 17h00 às 18h00
+                {EVENT_DATE.weekdayShort}, {EVENT_DATE.short} · {PROGRAM_TIMES.awards.range}
               </span>
               <p className="text-xs text-slate-300 font-sans leading-relaxed">
                 Entrega de prêmios, encerramento e foto oficial do evento.
@@ -198,7 +199,7 @@ export const OxethonPage: React.FC = () => {
             <span>Inscrições</span>
           </div>
           <p className="text-sm text-slate-200 font-sans leading-relaxed">
-            Inscrições limitadas por modalidade, até 25 de novembro de 2026.
+            Inscrições limitadas por modalidade, até {REGISTRATION_DEADLINE.long}.
           </p>
         </div>
       </div>
@@ -222,7 +223,7 @@ export const OxethonPage: React.FC = () => {
       {/* Final CTA Banner */}
       <div className="text-center p-8 bg-[#0030B5]/20 border-2 border-[#FCC140] rounded-sm maker-shadow-yellow space-y-4">
         <h3 className="text-2xl sm:text-3xl font-heading text-[#0B1330] uppercase">
-          Inscreva Sua Equipe Até 25/11
+          Inscreva Sua Equipe Até {REGISTRATION_DEADLINE.short}
         </h3>
         <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto font-sans">
           Garanta a vaga da sua escola no Ôxe Maker 2026 e prepare o projeto para o pitch final das

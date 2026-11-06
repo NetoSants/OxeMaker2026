@@ -2,7 +2,7 @@
 
 Site oficial da **6ª edição do Ôxe Maker (2021–2026)** — Mostra de Robótica Educacional e Cultura Maker/Geek da **GRE Metropolitana Norte** (Rede Pública Estadual de Pernambuco).
 
-- **Data do Evento**: 02 de dezembro de 2026 (Quarta-feira) — Das 07h00 às 18h00
+- **Data do Evento**: 01 de dezembro de 2026 (Terça-feira) — Das 07h00 às 18h00
 - **Local**: ETE José de Alencar — Ginásio e Pátio Central
 - **Endereço**: Rua João Francisco Batista, 170, Janga, Paulista – PE, 53439-410
 - **Tema 2026**: *"Vidas, Escolas e Comunidades: Educar para a Promoção da Justiça Socioambiental"*
@@ -79,7 +79,7 @@ O código foi organizado em camadas modulares para facilitar manutenções futur
     │   │   ├── Footer.tsx          # Rodapé compacto com slogan, tema e parceiros
     │   │   ├── Logo.tsx            # Marca oficial com tipografia e mascote
     │   │   ├── CalangoMascot.tsx   # Mascote Calango vetorial animado (SVG)
-    │   │   ├── CountdownTimer.tsx  # Contagem regressiva ao vivo para 02/12/2026 07h00
+    │   │   ├── CountdownTimer.tsx  # Contagem regressiva ao vivo para a data do evento
     │   │   ├── AnimatedCounter.tsx # Contadores com IntersectionObserver
     │   │   ├── EditalModal.tsx     # Modal de leitura e download de editais técnicos
     │   │   ├── ScrollToTop.tsx     # Restaura scroll ao trocar de rota
@@ -103,12 +103,14 @@ O código foi organizado em camadas modulares para facilitar manutenções futur
 
 ## ✏️ Onde Editar Cada Conteúdo
 
-Todos os textos, datas, nomes e links de inscrição estão concentrados no arquivo:
-👉 **`/src/core/constants.ts`**
+Todos os textos, datas, nomes e links de inscrição estão concentrados nos arquivos:
+📄 **`/src/core/eventMeta.ts`** (datas, prazos e horários)
+📄 **`/src/core/constants.ts`** (demais conteúdos)
 
-| O que você quer alterar | Onde editar em `/src/core/constants.ts` |
+| O que você quer alterar | Onde editar |
 |---|---|
-| **Data, hora e local do evento** | Objeto `EVENT_INFO.dates` e `EVENT_INFO.location` |
+| **Data, dia da semana, prazo e horários** | Constantes em `src/core/eventMeta.ts` |
+| **Local do evento** | Objeto `EVENT_INFO.location` em `src/core/constants.ts` |
 | **Links dos formulários Google Forms** | Objeto `EVENT_INFO.links` |
 | **Contatos e Redes Sociais** | Objeto `EVENT_INFO.contact` |
 | **Números de impacto (provas sociais)** | Array `METRICS_DATA` |

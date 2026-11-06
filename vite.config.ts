@@ -3,12 +3,30 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import crypto from 'node:crypto';
 import {defineConfig, type Plugin} from 'vite';
+import { EVENT_DATE } from './src/core/eventMeta.ts';
 
 /**
  * Injeta a Content-Security-Policy apenas no build de produção.
  * O script inline de bootstrap do tema é liberado por hash SHA-256.
  * (Em dev o plugin fica inativo para não bloquear o HMR do Vite.)
  */
+function eventMetaPlugin(): Plugin {
+  const tokens: Record<string, string> = {
+    '{{EVENT_DATE_LONG}}': EVENT_DATE.long,
+    '{{EVENT_DATE_SHORT}}': EVENT_DATE.short,
+  };
+
+  return {
+    name: 'inject-event-meta',
+    transformIndexHtml(html) {
+      return Object.entries(tokens).reduce(
+        (result, [token, value]) => result.replaceAll(token, value),
+        html,
+      );
+    },
+  };
+}
+
 function cspMetaPlugin(): Plugin {
   return {
     name: 'inject-csp-meta',
@@ -46,7 +64,7 @@ function cspMetaPlugin(): Plugin {
 export default defineConfig(() => {
   return {
     base: '/Site-OxeMaker/',
-    plugins: [react(), tailwindcss(), cspMetaPlugin()],
+    plugins: [react(), tailwindcss(), eventMetaPlugin(), cspMetaPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

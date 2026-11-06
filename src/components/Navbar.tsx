@@ -4,6 +4,7 @@ import { Logo } from './Logo';
 import { Menu, X, Calendar, MapPin, Sparkles, ChevronDown, ChevronRight } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { EVENT_INFO } from '../core/constants';
+import { REGISTRATION_DEADLINE } from '../core/eventMeta';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +72,7 @@ export const Navbar: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-emerald-700 font-semibold">● Inscrições até 25/11</span>
+            <span className="text-emerald-700 font-semibold">● Inscrições até {REGISTRATION_DEADLINE.short}</span>
             <span className="text-slate-500">·</span>
             <span className="text-slate-400">GRE Metropolitana Norte</span>
           </div>

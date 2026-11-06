@@ -1,4 +1,5 @@
 import React from 'react';
+import { EVENT_DATE } from '../../core/eventMeta';
 import { NEWS_DATA } from '../../core/news';
 import { Newspaper, ExternalLink, CalendarDays, ArrowUpRight } from 'lucide-react';
 
@@ -121,7 +122,7 @@ export const NoticiasPage: React.FC = () => {
         <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
           Esta página lista apenas matérias jornalísticas que mencionam o Ôxe Maker. Textos,
           títulos e imagens pertencem aos veículos originais; ao clicar, você é levado ao site de
-          cada publicação. A cobertura da 6ª edição (02 de dezembro de 2026) será adicionada aqui
+          cada publicação. A cobertura da 6ª edição ({EVENT_DATE.long}) será adicionada aqui
           assim que for publicada.
         </p>
       </div>

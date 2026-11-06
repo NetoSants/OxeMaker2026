@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { EVENT_INFO, SCHEDULE_DATA } from '../../core/constants';
+import { EVENT_DATE } from '../../core/eventMeta';
 import { ScheduleItem } from '../../core/types';
 import {
   Calendar,
@@ -121,7 +122,7 @@ export const ProgramacaoPage: React.FC = () => {
           <span>Grade Oficial de Atividades · 07h00 às 18h00</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-heading font-black text-[#0B1330] uppercase tracking-tight">
-          Programação · 02 de Dezembro
+          Programação · {EVENT_DATE.dayMonthLongCapitalized}
         </h1>
         <p className="text-slate-300 text-sm sm:text-base max-w-3xl font-sans">
           Acompanhe todos os horários do dia: credenciamento, abertura cultural, TED Talks,
@@ -291,7 +292,7 @@ export const ProgramacaoPage: React.FC = () => {
                             </span>
                             <span className="text-slate-500">·</span>
                             <span className="text-[11px] font-mono-code px-2 py-0.5 rounded-sm border bg-[#0030B5]/30 border-[#01B1FD]/40 text-[#0369A1]">
-                              02/12 · Quarta-feira
+                              {EVENT_DATE.short} · {EVENT_DATE.weekdayLongCapitalized}
                             </span>
                           </div>
 

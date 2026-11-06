@@ -13,6 +13,12 @@ import {
   GalleryItem,
 } from './types';
 import { img } from './images';
+import {
+  EVENT_DATE,
+  EVENT_TIME,
+  PROGRAM_TIMES,
+  REGISTRATION_DEADLINE,
+} from './eventMeta';
 
 /**
  * ============================================================================
@@ -31,10 +37,10 @@ export const EVENT_INFO: EventGeneralInfo = {
   organizer: 'GRE Metropolitana Norte',
   organizerFullName: 'Gerência Regional de Educação Metropolitana Norte · Secretaria de Educação e Esportes de Pernambuco',
   dates: {
-    display: '02 de dezembro de 2026',
-    day1: '02 de Dezembro de 2026 (Quarta-feira)',
-    isoStartDate: '2026-12-02T07:00:00-03:00',
-    timeRange: 'Das 07h00 às 18h00',
+    display: EVENT_DATE.long,
+    day1: EVENT_DATE.full,
+    isoStartDate: EVENT_DATE.iso,
+    timeRange: EVENT_TIME.display,
   },
   location: {
     venue: 'ETE José de Alencar',
@@ -171,7 +177,7 @@ export const HIGHLIGHTS_DATA: FeatureHighlight[] = [
     id: 'hackathon',
     title: 'Hackathon Ôxe Maker',
     description:
-      'As equipes apresentam seus projetos no grande pitch do Hackathon, às 16h00 do dia 02 de dezembro.',
+      `As equipes apresentam seus projetos no grande pitch do Hackathon, às ${PROGRAM_TIMES.pitch.startLabel} do dia ${EVENT_DATE.dayMonthLong}.`,
     iconName: 'Cpu',
     link: '/oxethon',
     tag: 'Pitch Final',
@@ -199,7 +205,7 @@ export const HIGHLIGHTS_DATA: FeatureHighlight[] = [
 
 /**
  * ============================================================================
- * PROGRAMAÇÃO OFICIAL (02 DE DEZEMBRO DE 2026 — 1 DIA)
+ * PROGRAMAÇÃO OFICIAL (DIA ÚNICO)
  * ============================================================================
  */
 export const SCHEDULE_DATA: ScheduleItem[] = [
@@ -325,7 +331,7 @@ export const TOURNAMENTS_DATA: RoboticsTournament[] = [
     ],
     arenaDetails: 'Pista de MDF fosco de 3m x 2m com curvas de raio fechado e marcas de parada reflexiva.',
     maxTeamSize: 4,
-    scheduleTime: '02/12 · Competições & Geek (14h30 - 15h30)',
+    scheduleTime: `${EVENT_DATE.short} · Competições & Geek (${PROGRAM_TIMES.competitions.label})`,
     editalPdfUrl: 'https://drive.google.com/file/d/1lVZgVDc12WPgL4cuI6OS7jVz8TeFCSxc/view?usp=drive_link',
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdFEmR2FsT9fwvZZjLlXCztOeZimsvnidaMZOBrRYKDA3u_Kg/viewform',
     prizeSummary: '1º, 2º e 3º Lugares com Troféu Maker 3D, medalhas e Kits de Sensores Analógicos e Digitais.',
@@ -345,7 +351,7 @@ export const TOURNAMENTS_DATA: RoboticsTournament[] = [
     ],
     arenaDetails: 'Pista profissional de 6m com desnível suave, curvas parabólicas e retas de arrancada.',
     maxTeamSize: 4,
-    scheduleTime: '02/12 · Competições & Geek (14h30 - 15h30)',
+    scheduleTime: `${EVENT_DATE.short} · Competições & Geek (${PROGRAM_TIMES.competitions.label})`,
     editalPdfUrl: 'https://drive.google.com/file/d/1lVZgVDc12WPgL4cuI6OS7jVz8TeFCSxc/view?usp=drive_link',
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdFEmR2FsT9fwvZZjLlXCztOeZimsvnidaMZOBrRYKDA3u_Kg/viewform',
     prizeSummary: 'Troféus, medalhas e kits de componentes eletrônicos para os vencedores.',
@@ -367,7 +373,7 @@ export const TOURNAMENTS_DATA: RoboticsTournament[] = [
     ],
     arenaDetails: 'Arena preferencialmente circular, com 70cm a 150cm de diâmetro. A marcação de início fica entre 10cm e 30cm da linha de contorno.',
     maxTeamSize: 4,
-    scheduleTime: '02/12 · Competições & Geek (14h30 - 15h30)',
+    scheduleTime: `${EVENT_DATE.short} · Competições & Geek (${PROGRAM_TIMES.competitions.label})`,
     editalPdfUrl: 'https://drive.google.com/file/d/1PtF4WqOwho7xJwdD9exidnyD51Qw-SgD/view?usp=drive_link',
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeOckNfYCA_BdjSqGzWB88LSFskNIXUzmN4hGjTZ1QBykE2VQ/viewform',
     prizeSummary: 'Troféus dos Guerreiros do Mangue, motores de alto torque N20 e pontes H profissionais.',
@@ -399,7 +405,7 @@ export const GEEK_CATEGORIES: GeekCategory[] = [
       'Apresentações individuais (até 1min30s) e duplas (até 2min30s)',
       'Camarim climatizado para preparação dos participantes no local',
     ],
-    scheduleTime: 'Quarta, 02 de dezembro · Competições & Geek (14h30 - 15h30)',
+    scheduleTime: `${EVENT_DATE.weekdayShort}, ${EVENT_DATE.dayMonthLong} · Competições & Geek (${PROGRAM_TIMES.competitions.label})`,
     stage: 'ETE José de Alencar · Paulista-PE',
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSd4R3JcsSD_8gPA9DwBJ3HMes4C9Z5YwhQk57AadqcZn6wGug/viewform',
     rulesPdfUrl: 'https://docs.google.com/document/d/1JSj1mhJ9lFLgzRjuAn0TOssGCi1vxQWWEfx3_X4xXjQ/edit?usp=drivesdk',
@@ -420,9 +426,9 @@ export const GEEK_CATEGORIES: GeekCategory[] = [
     rulesHighlight: [
       'Modalidades: Solo e Grupos (de 2 a 9 integrantes)',
       'Tempo máximo de música: 4 minutos em áudio enviado previamente em alta qualidade (MP3)',
-      'Ensaios e reconhecimento de palco combinados com a coordenação no dia 02/12',
+      `Ensaios e reconhecimento de palco combinados com a coordenação no dia ${EVENT_DATE.short}`,
     ],
-    scheduleTime: 'Quarta, 02 de dezembro · Competições & Geek (14h30 - 15h30)',
+    scheduleTime: `${EVENT_DATE.weekdayShort}, ${EVENT_DATE.dayMonthLong} · Competições & Geek (${PROGRAM_TIMES.competitions.label})`,
     stage: 'ETE José de Alencar · Paulista-PE',
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSftjJcV2ciOO2Jt0uWN0yAHIclFtr2uDcjy8teEm8q85WaJpA/viewform',
     rulesPdfUrl: 'https://docs.google.com/document/d/1d6mWJLKoLgf8ZDlmRN20hzaPcGI9Z9x8uqQV5iptbZc/edit?usp=drivesdk',
@@ -433,29 +439,29 @@ export const GEEK_CATEGORIES: GeekCategory[] = [
 
 /**
  * ============================================================================
- * HACKATHON ÔXE MAKER (PITCH NO DIA 02/12)
+ * HACKATHON ÔXE MAKER (PITCH FINAL)
  * ============================================================================
  */
 export const OXETHON_INFO: OxethonInfo = {
   title: 'Hackathon Ôxe Maker',
   description:
-    'As equipes do Hackathon Ôxe Maker apresentam seus projetos no grande pitch, no dia 02 de dezembro de 2026, das 16h00 às 17h00, logo antes da cerimônia de premiação.',
+    `As equipes do Hackathon Ôxe Maker apresentam seus projetos no grande pitch, no dia ${EVENT_DATE.long}, das ${PROGRAM_TIMES.pitch.range}, logo antes da cerimônia de premiação.`,
   stages: [
     {
       phase: 'Apresentação do Pitch do Hackathon',
-      time: 'Quarta, 02/12 · 16h00 às 17h00',
+      time: `${EVENT_DATE.weekdayShort}, ${EVENT_DATE.short} · ${PROGRAM_TIMES.pitch.range}`,
       description:
         'Momento de apresentação dos projetos das equipes, seguido da cerimônia de premiação às 17h00.',
     },
   ],
   regulationsSummary: [
-    'As inscrições de equipes e projetos são feitas até 25 de novembro de 2026 pelos formulários oficiais.',
+    `As inscrições de equipes e projetos são feitas até ${REGISTRATION_DEADLINE.long} pelos formulários oficiais.`,
     'Mais detalhes do regulamento do Hackathon serão divulgados pela coordenação.',
     'Menores de idade devem apresentar autorização dos responsáveis no credenciamento (07h00 às 08h00).',
   ],
   slogan: 'O Hackathon Arretado',
   story:
-    'O Ôxethon é o hackathon do Ôxe Maker e acontece dentro da programação do evento, no dia 02 de dezembro. Equipes multidisciplinares criam soluções tecnológicas que impactem positivamente a comunidade local e apresentam seus projetos no pitch final, às 16h. É o lugar onde o código encontra a realidade e a inovação acontece na prática.',
+    `O Ôxethon é o hackathon do Ôxe Maker e acontece dentro da programação do evento, no dia ${EVENT_DATE.dayMonthLong}. Equipes multidisciplinares criam soluções tecnológicas que impactem positivamente a comunidade local e apresentam seus projetos no pitch final, às 16h. É o lugar onde o código encontra a realidade e a inovação acontece na prática.`,
   registrationUrl: 'https://forms.gle/oxemaker2026-oficineiros',
   regulationsUrl: '#regulamento-oxethon',
   image: img('oxethon.webp'),
@@ -463,7 +469,7 @@ export const OXETHON_INFO: OxethonInfo = {
 
 /**
  * ============================================================================
- * OFICINA OFICIAL (02 DE DEZEMBRO DE 2026)
+ * OFICINA OFICIAL (DIA DO EVENTO)
  * ============================================================================
  */
 export const WORKSHOPS_REGISTRATION_URL = '';
@@ -474,7 +480,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Construção de Projetos com Arduino Utilizando Tinkercad e ABP',
     description:
       'Uso do Tinkercad para criação e simulação de projetos com Arduino, explorando modelagem de circuitos elétricos, lógica de programação e algoritmos em blocos. A proposta permite compreender, testar e aprimorar projetos de forma prática, dinâmica e interativa.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Professor Estevão Pinto',
@@ -493,7 +499,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Ensino de ciências e matemática numa perspectiva artística, histórica e tecnológica',
     description:
       'Abordagem interdisciplinar de geometria, razão e proporção, sequência de Fibonacci, trigonometria, centro de massa e torque, articulando ciências e matemática com arte, história e filosofia.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM José Manoel de Queiroz',
@@ -517,7 +523,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Prompt: do Zero até a aplicação em sala de aula e no cotidiano escolar',
     description:
       'Criação, refino e validação de prompts para diferentes atividades pedagógicas, desde a produção de vídeos curtos até a elaboração de atividades.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Professores e estudantes interessados em inteligência artificial.',
     school: 'EREM Áurea de Moura Cavalcanti',
@@ -536,7 +542,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Do Pixel ao Medicamento: Transformando o Celular em um Laboratório de Análise Digital',
     description:
       'Oficina prática que usa a câmera do smartphone e aplicativos de leitura de cor para demonstrar conceitos de óptica, espectrofotometria e Lei de Beer-Lambert na análise de soluções coloridas, conectando química, física, saúde e tecnologia.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores do ensino médio.',
     school: 'ETE Pastor Isaac Martins Rodrigues',
@@ -559,7 +565,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Ecoguia',
     description:
       'Desenvolvimento de um sensor eletrônico de baixo custo para auxiliar pessoas com deficiência visual na locomoção e identificação de obstáculos, com conceitos de tecnologia assistiva, eletrônica básica, programação em C++ e Arduino.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREFEM Stela Maria',
@@ -578,7 +584,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Eletrônica sem Mistério',
     description:
       'Oficina de eletrônica básica voltada para a robótica, com montagem de circuitos simples e dinâmicos para tornar o aprendizado mais interativo e prático.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'ETE Pastor Isaac Martins Rodrigues',
@@ -603,7 +609,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'FutCar – Futebol de Robôs',
     description:
       'Montagem de robôs LEGO para competição de futebol e programação no aplicativo, com foco em construção, movimentação e trabalho em equipe.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Alberto Augusto de Morais Pradines',
@@ -622,7 +628,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Primeiros passos na programação: descobrindo o micro:bit',
     description:
       'Apresentação da placa micro:bit, seus botões, LEDs e sensores; exploração da plataforma MakeCode; criação da primeira programação em blocos e teste do projeto no simulador ou na placa física.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Maria Gayão Pessoa Guerra',
@@ -640,7 +646,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     id: 'english-easy',
     title: 'English Easy',
     description: 'Oficina de inglês com atividades e materiais de apoio criados no Canva.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Professora Amarina Simões',
@@ -659,7 +665,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Mundo 3D',
     description:
       'Oficina de introdução ao universo 3D, com fundamentos da modelagem e da percepção espacial. A atividade combina demonstrações e práticas com caneta 3D e óculos de realidade virtual Meta Quest para explorar criação digital, tridimensionalidade e experiências imersivas.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     instructor: {
@@ -677,7 +683,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Robôs Manipuladores',
     description:
       'Controle de um robô manipulador de 3 graus de liberdade com garra, abordando noções básicas de Arduino, acionamento de servomotores e leitura de joystick analógico.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     instructor: {
@@ -695,7 +701,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Tecnologias Assistivas e Acessibilidade Digital',
     description:
       'Oficina de acessibilidade digital para todos, com introdução a recursos e soluções tecnológicas que ampliam a inclusão e a autonomia de pessoas com deficiência.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM José',
@@ -714,7 +720,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Recomposição da Aprendizagem: como transformar diagnósticos em decisões pedagógicas',
     description:
       'Oficina para gestores escolares sobre como usar evidências de aprendizagem para identificar lacunas e orientar ações de recomposição, conectando diagnósticos à tomada de decisão pedagógica.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Gestores escolares e professores.',
     instructor: {
@@ -732,7 +738,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Solarisando a Bioglow',
     description:
       'Atividade inspirada na FIRST LEGO League Challenge: capacitação em robótica LEGO, programação, montagem de anexos e uma competição prática com o tapete oficial BIOGLOW 2026/2027.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'ETE Pastor Isaac Martins Rodrigues',
@@ -751,7 +757,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Monitoramento Climático e IoT na Prática',
     description:
       'Montagem de uma estação microclimática com ESP32/ESP8266, leitura de sensores ambientais e envio de dados em tempo real para a nuvem usando MQTT, com visualização de gráficos ao vivo.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Maestro Nelson Ferreira',
@@ -770,7 +776,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
     title: 'Introdução ao Arduino',
     description:
       'Introdução à eletrônica básica e ao Arduino, com uso de multímetro, apresentação de componentes e montagem prática de um semáforo.',
-    schedule: '02 de dezembro · horário a definir',
+    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
     room: 'Salas de oficina · ETE José de Alencar',
     targetAudience: 'Estudantes e professores da rede estadual.',
     school: 'EREM Senador José Ermírio de Morais',
@@ -839,7 +845,7 @@ export const TIMELINE_DATA: TimelineMilestone[] = [
     edition: '6ª Edição',
     title: 'O Presente: Justiça Socioambiental & Futuro',
     description:
-      'A 6ª edição acontece em um único dia, 02 de dezembro, na ETE José de Alencar em Paulista, com oficinas, mostra de projetos, competições, cultura geek e o pitch do Hackathon.',
+      `A 6ª edição acontece em um único dia, ${EVENT_DATE.dayMonthLong}, na ETE José de Alencar em Paulista, com oficinas, mostra de projetos, competições, cultura geek e o pitch do Hackathon.`,
     stats: '58+ escolas parceiras · 6+ competições · 90+ projetos makers',
   },
 ];
@@ -965,12 +971,12 @@ export const FAQ_DATA = [
   {
     question: 'Quando e onde acontece o Ôxe Maker 2026?',
     answer:
-      'O evento acontece em um único dia: 02 de dezembro de 2026 (quarta-feira), das 07h00 às 18h00, na ETE José de Alencar (Rua João Francisco Batista, 170 — Janga, Paulista-PE, 53439-410).',
+      `O evento acontece em um único dia: ${EVENT_DATE.long} (${EVENT_DATE.weekdayLong}), das ${EVENT_TIME.startLabel} às ${EVENT_TIME.endLabel}, na ETE José de Alencar (Rua João Francisco Batista, 170 — Janga, Paulista-PE, 53439-410).`,
   },
   {
     question: 'Até quando posso me inscrever?',
     answer:
-      'As inscrições vão até 25 de novembro de 2026 e abrangem Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-pop), Oficinas Maker, Mostra de Projetos, Ôxethon e Visitantes.',
+      `As inscrições vão até ${REGISTRATION_DEADLINE.long} e abrangem Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-pop), Oficinas Maker, Mostra de Projetos, Ôxethon e Visitantes.`,
   },
   {
     question: 'Quais são as modalidades de inscrição?',
@@ -985,7 +991,7 @@ export const FAQ_DATA = [
   {
     question: 'Como faço para participar das competições?',
     answer:
-      'Acesse a página de Inscrições e escolha entre Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-POP), Oficinas Maker e Oxethon. Confirme as regras da categoria desejada e faça sua inscrição até 25/11/2026. As competições acontecem no dia 02/12, das 14h30 às 15h30.',
+      `Acesse a página de Inscrições e escolha entre Torneios (Buzz Line, Buzz PRO e Sumô de Robôs), Cultura Geek (Cosplay e K-POP), Oficinas Maker e Oxethon. Confirme as regras da categoria desejada e faça sua inscrição até ${REGISTRATION_DEADLINE.shortWithYear}. As competições acontecem no dia ${EVENT_DATE.short}, das ${PROGRAM_TIMES.competitions.range}.`,
   },
   {
     question: 'Qual é a programação do dia do evento?',

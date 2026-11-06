@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Download, FileText, CheckCircle, ShieldAlert, BookOpen } from 'lucide-react';
 import { EVENT_INFO } from '../core/constants';
+import { EVENT_DATE, REGISTRATION_DEADLINE } from '../core/eventMeta';
 
 interface EditalModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ export const EditalModal: React.FC<EditalModalProps> = ({
     // Generate simple printable text document
     const content = `ÔXE MAKER 2026 - REGULAMENTO OFICIAL
 ${tournamentName} - ${category}
-Data: 02 de dezembro de 2026
+Data: ${EVENT_DATE.long}
 Local: ${EVENT_INFO.location.venue}, ${EVENT_INFO.location.neighborhood}, ${EVENT_INFO.location.city} - ${EVENT_INFO.location.state}
 Realização: GRE Metropolitana Norte / SEE-PE
 
@@ -39,7 +40,7 @@ TEMA 2026: "Vidas, Escolas e Comunidades: Educar para a Promoção da Justiça S
 Fomentar a criatividade e a aplicação prática da robótica e cultura maker entre estudantes da rede pública de Pernambuco.
 
 2. ESPECIFICAÇÕES TÉCNICAS:
-- Inscrições abertas até 25/11/2026, limitadas por modalidade.
+- Inscrições abertas até ${REGISTRATION_DEADLINE.shortWithYear}, limitadas por modalidade.
 - Credenciamento das 07h00 às 08h00, na frente do evento.
 - Todos os robôs devem respeitar os padrões de segurança e possuir chave geral identificada.
 
@@ -137,8 +138,8 @@ Consulte a coordenação pelo e-mail: ${EVENT_INFO.contact.email}
           </div>
 
           <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-sm text-xs text-amber-800 text-justify">
-            <strong>Atenção:</strong> O credenciamento das equipes encerra-se às 08h00 do dia 02 de
-            dezembro de 2026. Equipes não credenciadas não poderão competir.
+            <strong>Atenção:</strong> O credenciamento das equipes encerra-se às 08h00 do dia{' '}
+            {EVENT_DATE.long}. Equipes não credenciadas não poderão competir.
           </div>
         </div>
 

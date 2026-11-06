@@ -8,6 +8,7 @@ import {
   WORKSHOPS_DATA,
   WORKSHOPS_REGISTRATION_URL,
 } from '../../core/constants';
+import { EVENT_DATE, PROGRAM_TIMES, REGISTRATION_DEADLINE } from '../../core/eventMeta';
 import {
   ArrowRight,
   Bot,
@@ -357,7 +358,7 @@ export const InscricoesPage: React.FC = () => {
               As oficinas de 2026 já têm propostas
             </h3>
             <p className="text-sm text-slate-400 font-sans leading-relaxed">
-              As submissões de propostas para a 6ª edição seguem abertas até 25/11/2026. Confira
+              As submissões de propostas para a 6ª edição seguem abertas até {REGISTRATION_DEADLINE.shortWithYear}. Confira
               os temas, as escolas proponentes e os programas previstos na página de Oficinas.
             </p>
           </div>
@@ -425,7 +426,7 @@ export const InscricoesPage: React.FC = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
-                <span>Apresentação para banca e visitantes durante a programação do dia 02/12</span>
+                <span>Apresentação para banca e visitantes durante a programação do dia {EVENT_DATE.short}</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0 mt-0.5" />
@@ -474,7 +475,7 @@ export const InscricoesPage: React.FC = () => {
           icon={<Cpu className="w-6 h-6 text-[#0369A1]" />}
           eyebrow="Hackathon"
           title="Oxethon"
-          description="Monte sua equipe, desenvolva uma solução e apresente o pitch no dia 02 de dezembro."
+          description={`Monte sua equipe, desenvolva uma solução e apresente o pitch no dia ${EVENT_DATE.dayMonthLong}.`}
         />
 
         <div className="bg-gradient-to-r from-[#F9FDFE] to-[#0030B5]/15 border-2 border-[#01B1FD] rounded-sm maker-shadow-cyan p-6 sm:p-8">
@@ -494,7 +495,7 @@ export const InscricoesPage: React.FC = () => {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-[#0369A1]" />
-                  16h00 às 17h00
+                  {PROGRAM_TIMES.pitch.range}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-[#0369A1]" />

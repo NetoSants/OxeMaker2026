@@ -228,7 +228,7 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Live Countdown to 02/12/2026 07:00 */}
+              {/* Live countdown to the event start */}
               <div className="order-3 w-full">
                 <CountdownTimer />
               </div>
