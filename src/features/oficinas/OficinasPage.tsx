@@ -1,6 +1,6 @@
 import React from 'react';
-import { WORKSHOPS_DATA, WORKSHOPS_REGISTRATION_URL } from '../../core/constants';
-import { Wrench, Clock, MapPin, Users, BookOpen, School, Sparkles, User } from 'lucide-react';
+import { WORKSHOPS_DATA } from '../../core/constants';
+import { Wrench, Clock, MapPin, Users, BookOpen, School, ExternalLink, User } from 'lucide-react';
 
 export const OficinasPage: React.FC = () => {
   return (
@@ -9,38 +9,18 @@ export const OficinasPage: React.FC = () => {
       <div className="space-y-3 text-center sm:text-left border-b border-slate-800 pb-8">
         <div className="inline-flex items-center gap-2 text-xs font-mono-code text-[#0369A1] uppercase font-bold tracking-wider">
           <Wrench className="w-4 h-4 text-[#8A5A04]" />
-          <span>Oficinas 2026 · Propostas Recebidas</span>
+          <span>Oficinas 2026 · Inscrições abertas</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-heading font-black text-[#0B1330] uppercase tracking-tight">
-          Oficinas Propostas
+          Oficinas 2026
         </h1>
         <p className="text-slate-300 text-sm sm:text-base max-w-3xl font-sans">
-          {WORKSHOPS_DATA.length} propostas recebidas para a 6ª edição. A programação final, os
-          horários e a grade de oficinas serão confirmados pela organização.
+          {WORKSHOPS_DATA.length} oficinas disponíveis para a 6ª edição. Escolha uma oficina e faça
+          sua inscrição. A programação final e os horários serão confirmados pela organização.
         </p>
-        <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
-          {WORKSHOPS_REGISTRATION_URL ? (
-            <a
-              href={WORKSHOPS_REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="maker-btn-primary py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Inscrever-se nas oficinas</span>
-            </a>
-          ) : (
-            <button
-              type="button"
-              disabled
-              title="O formulário de inscrição será disponibilizado em breve"
-              className="maker-btn-primary py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
-            >
-              <Clock className="w-3.5 h-3.5" />
-              <span>Inscrições em breve</span>
-            </button>
-          )}
-        </div>
+        <p className="text-xs font-mono-code text-slate-400">
+          As inscrições são feitas por oficina. Escolha uma das opções abaixo.
+        </p>
       </div>
 
       {/* Workshop Proposal Cards */}
@@ -53,7 +33,7 @@ export const OficinasPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-2 py-0.5 bg-[#F1F4FB] text-[#8A5A04] font-mono-code text-xs font-bold rounded-sm border border-slate-700">
-                  Proposta {String(idx + 1).padStart(2, '0')}
+                  Oficina {String(idx + 1).padStart(2, '0')}
                 </span>
                 {ws.school && (
                   <span className="inline-flex items-center gap-1.5 max-w-full px-2 py-0.5 bg-[#01B1FD]/15 text-[#0369A1] font-mono-code text-[11px] font-bold rounded-sm border border-[#01B1FD]/40">
@@ -105,9 +85,31 @@ export const OficinasPage: React.FC = () => {
               </div>
             </div>
 
+            {ws.registrationUrl ? (
+              <a
+                href={ws.registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-btn-primary w-full py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Inscrever-se nesta oficina</span>
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled
+                title="O formulário de inscrição será disponibilizado em breve"
+                className="maker-btn-primary w-full py-2.5 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
+              >
+                <Clock className="w-3.5 h-3.5" />
+                <span>Inscrições em breve</span>
+              </button>
+            )}
+
             <p className="flex items-center gap-1.5 text-[10px] font-mono-code text-slate-400">
               <BookOpen className="w-3.5 h-3.5 text-[#0369A1] flex-shrink-0" />
-              Proposta recebida para avaliação da organização.
+              Inscrições abertas para esta oficina.
             </p>
           </article>
         ))}

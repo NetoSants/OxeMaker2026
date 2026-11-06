@@ -6,7 +6,6 @@ import {
   OXETHON_INFO,
   TOURNAMENTS_DATA,
   WORKSHOPS_DATA,
-  WORKSHOPS_REGISTRATION_URL,
 } from '../../core/constants';
 import { EVENT_DATE, PROGRAM_TIMES, REGISTRATION_DEADLINE } from '../../core/eventMeta';
 import {
@@ -345,51 +344,30 @@ export const InscricoesPage: React.FC = () => {
           icon={<Wrench className="w-6 h-6 text-[#8A5A04]" />}
           eyebrow="Mão na Massa"
           title="Oficinas Maker"
-          description="Conheça as propostas de oficinas enviadas por escolas da rede estadual para esta edição."
+          description={`Conheça as ${WORKSHOPS_DATA.length} oficinas disponíveis e escolha onde se inscrever.`}
         />
 
         <div className="bg-[#F9FDFE] border-2 border-slate-700/80 rounded-sm p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
           <div className="lg:col-span-2 space-y-3">
             <span className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#F1F4FB] text-[#8A5A04] font-mono-code text-[11px] font-bold rounded-sm border border-slate-700">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              {WORKSHOPS_DATA.length} propostas recebidas
+              {WORKSHOPS_DATA.length} oficinas disponíveis
             </span>
             <h3 className="text-2xl font-heading text-[#0B1330]">
-              As oficinas de 2026 já têm propostas
+              Escolha sua oficina
             </h3>
             <p className="text-sm text-slate-400 font-sans leading-relaxed">
-              As submissões de propostas para a 6ª edição seguem abertas até {REGISTRATION_DEADLINE.shortWithYear}. Confira
-              os temas, as escolas proponentes e os programas previstos na página de Oficinas.
+              As inscrições nas oficinas estão abertas até {REGISTRATION_DEADLINE.shortWithYear}. Confira
+              os temas, as escolas responsáveis e os detalhes de cada oficina na página de Oficinas.
             </p>
           </div>
 
           <div className="lg:col-span-1 flex flex-col gap-2">
-            {WORKSHOPS_REGISTRATION_URL ? (
-              <a
-                href={WORKSHOPS_REGISTRATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
-              >
-                <span>Inscrever-se nas oficinas</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            ) : (
-              <button
-                type="button"
-                disabled
-                title="O formulário de inscrição será disponibilizado em breve"
-                className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
-              >
-                <Clock className="w-4 h-4" />
-                <span>Inscrições em breve</span>
-              </button>
-            )}
             <Link
               to="/oficinas"
-              className="maker-btn-secondary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
+              className="maker-btn-primary w-full py-3 px-5 text-xs uppercase flex items-center justify-center gap-2"
             >
-              <span>Conhecer as oficinas</span>
+              <span>Escolher oficina</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

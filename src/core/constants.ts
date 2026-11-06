@@ -472,7 +472,34 @@ export const OXETHON_INFO: OxethonInfo = {
  * OFICINA OFICIAL (DIA DO EVENTO)
  * ============================================================================
  */
-export const WORKSHOPS_REGISTRATION_URL = '';
+const WORKSHOP_REGISTRATION_URLS: Record<string, string> = {
+  'arduino-tinkercad-abp':
+    'https://docs.google.com/forms/d/e/1FAIpQLScKGG3F9u9iQzmZKHh-ZoatSGR4ZylxicHKb54puLOsW5BOYA/viewform?usp=dialog',
+  'prompt-zero-aplicacao':
+    'https://docs.google.com/forms/d/e/1FAIpQLSezOl76CDoOwKVGSma7u2LbgalVOVJ9Xls5kPBt9Sh_Y2gFyQ/viewform?usp=dialog',
+  'pixel-medicamento':
+    'https://docs.google.com/forms/d/e/1FAIpQLSfFwW7HZOoWai2SRj-eq85SJ3WXxJW1z0A-lhbaDtSj64PXGg/viewform?usp=dialog',
+  'eletronica-sem-misterio':
+    'https://docs.google.com/forms/d/e/1FAIpQLScAw27o0PQrlRsYiN3IEo_W9Iv45pr_fFaK1JLfBJhKg47oBw/viewform?usp=dialog',
+  'futcar-futebol-robos':
+    'https://docs.google.com/forms/d/e/1FAIpQLScfUhccS1wIyoVqirBU3nK40IoYPVaYokriYaVFBRpefWma5g/viewform?usp=dialog',
+  'microbit-primeiros-passos':
+    'https://docs.google.com/forms/d/e/1FAIpQLSeafZrarPQAZh_1D548uZyStg7UkBAk9ENKG10za0nF9IuRZA/viewform?usp=dialog',
+  'mundo-3d':
+    'https://docs.google.com/forms/d/e/1FAIpQLSeGAyusyzXQzeUubB3Z_cKj8XpW1HD5g55Q_ldGWM9Wj63Qfw/viewform?usp=dialog',
+  'robos-manipuladores':
+    'https://docs.google.com/forms/d/e/1FAIpQLSf60CKRQ0-hbYSWJIj63KX2XUruvhOB-yYdqfYLRvbzlqkm3A/viewform?usp=dialog',
+  'tecnologias-assistivas-acessibilidade-digital':
+    'https://docs.google.com/forms/d/e/1FAIpQLSevq7kQTgexLlctEZ3HNsmnv3v4gIZlnWDW8r9pc6k7p8vbLA/viewform?usp=dialog',
+  'recomposicao-aprendizagem-diagnosticos':
+    'https://docs.google.com/forms/d/e/1FAIpQLSdxK9nsjKYDrUW1RnVGPXAUsftweEMY8mvfwVovinGV55AMfA/viewform?usp=dialog',
+  'solarisando-bioglow':
+    'https://docs.google.com/forms/d/e/1FAIpQLScjvSUQxqdvOaO9NJjjEs1AmwtlRptaWAIuLL2jr_1KKg-1lw/viewform?usp=dialog',
+  'monitoramento-climatico-iot':
+    'https://docs.google.com/forms/d/e/1FAIpQLSeTkz2Ty1TKUkRAanmzYRzCq95vqQbkODcA2eDD5MNlFR-6Lg/viewform?usp=dialog',
+  'introducao-arduino':
+    'https://docs.google.com/forms/d/e/1FAIpQLSc5azkSINDVZ1TI0xf2fVkYR0mQREK3covcMMtVvqG5mUl-xg/viewform?usp=dialog',
+};
 
 export const WORKSHOPS_DATA: Workshop[] = [
   {
@@ -493,30 +520,6 @@ export const WORKSHOPS_DATA: Workshop[] = [
     materialsProvided: ['Computadores', 'Acesso ao Tinkercad pelo navegador'],
     equipment: ['Projetor', 'Internet'],
     software: 'Tinkercad (navegador de internet)',
-  },
-  {
-    id: 'ciencias-matematica-arte-tecnologia',
-    title: 'Ensino de ciências e matemática numa perspectiva artística, histórica e tecnológica',
-    description:
-      'Abordagem interdisciplinar de geometria, razão e proporção, sequência de Fibonacci, trigonometria, centro de massa e torque, articulando ciências e matemática com arte, história e filosofia.',
-    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
-    room: 'Salas de oficina · ETE José de Alencar',
-    targetAudience: 'Estudantes e professores da rede estadual.',
-    school: 'EREM José Manoel de Queiroz',
-    instructor: {
-      name: 'Dorgival Francisco',
-      role: 'Oficineiro',
-      institution: 'EREM José Manoel de Queiroz',
-      bio: 'Responsável pela oficina.',
-    },
-    materialsProvided: [
-      'Isopor, tinta e cola',
-      'Peças de Arduino e LEGO NXT',
-      'Transferidor, régua e estilete',
-      'Notebook',
-    ],
-    equipment: ['Retroprojetor', 'Extensão'],
-    software: 'PowerPoint',
   },
   {
     id: 'prompt-zero-aplicacao',
@@ -559,25 +562,6 @@ export const WORKSHOPS_DATA: Workshop[] = [
     ],
     equipment: ['Projetor (Datashow)', 'Internet', 'Tomadas e extensões'],
     software: 'Color Meter, Word, PowerPoint e Excel',
-  },
-  {
-    id: 'ecoguia',
-    title: 'Ecoguia',
-    description:
-      'Desenvolvimento de um sensor eletrônico de baixo custo para auxiliar pessoas com deficiência visual na locomoção e identificação de obstáculos, com conceitos de tecnologia assistiva, eletrônica básica, programação em C++ e Arduino.',
-    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
-    room: 'Salas de oficina · ETE José de Alencar',
-    targetAudience: 'Estudantes e professores da rede estadual.',
-    school: 'EREFEM Stela Maria',
-    instructor: {
-      name: 'Diogo Sant Ana',
-      role: 'Oficineiro',
-      institution: 'EREFEM Stela Maria',
-      bio: 'Responsável pela oficina.',
-    },
-    materialsProvided: ['5 placas Arduino', '5 baterias com cabo', '5 sensores sonoros'],
-    equipment: ['Computador com internet'],
-    software: 'Arduino IDE',
   },
   {
     id: 'eletronica-sem-misterio',
@@ -641,24 +625,6 @@ export const WORKSHOPS_DATA: Workshop[] = [
     materialsProvided: ['Computadores', 'Kits com placas micro:bit'],
     equipment: ['Internet'],
     software: 'MakeCode para micro:bit',
-  },
-  {
-    id: 'english-easy',
-    title: 'English Easy',
-    description: 'Oficina de inglês com atividades e materiais de apoio criados no Canva.',
-    schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
-    room: 'Salas de oficina · ETE José de Alencar',
-    targetAudience: 'Estudantes e professores da rede estadual.',
-    school: 'EREM Professora Amarina Simões',
-    instructor: {
-      name: 'Mayara Vitória da Silva Gomes',
-      role: 'Oficineira',
-      institution: 'EREM Professora Amarina Simões',
-      bio: 'Responsável pela oficina.',
-    },
-    materialsProvided: ['Papéis ou cadernos, lápis, caneta e borracha'],
-    equipment: ['Projetor', 'Extensão', 'Internet'],
-    software: 'Canva',
   },
   {
     id: 'mundo-3d',
@@ -797,7 +763,10 @@ export const WORKSHOPS_DATA: Workshop[] = [
     equipment: ['Projetor ou TV', 'Extensão', 'Internet'],
     software: 'Arduino IDE',
   },
-];
+].map((workshop) => ({
+  ...workshop,
+  registrationUrl: WORKSHOP_REGISTRATION_URLS[workshop.id],
+}));
 
 /**
  * ============================================================================
