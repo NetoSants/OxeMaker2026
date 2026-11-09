@@ -522,7 +522,7 @@ export const WORKSHOPS_DATA: Workshop[] = [
   },
   {
     id: 'prompt-zero-aplicacao',
-    title: 'Prompt: do Zero até a aplicação em sala de aula e no cotidiano escolar',
+    title: 'IA sem segredos: da Teoria à Sala de Aula',
     description:
       'Criação, refino e validação de prompts para diferentes atividades pedagógicas, desde a produção de vídeos curtos até a elaboração de atividades.',
     schedule: `${EVENT_DATE.dayMonthLong} · horário a definir`,
