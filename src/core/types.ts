@@ -170,14 +170,12 @@ export interface SponsorTier {
   }[];
 }
 
-export interface GalleryItem {
+export interface BrandLogoItem {
   id: string;
-  title: string;
-  year: number;
-  category: 'competicoes' | 'projetos' | 'oficinas' | 'geek';
-  description: string;
+  image: string;
+  label: string;
+  alt: string;
   caption: string;
-  image?: string;
 }
 
 export interface NewsItem {
@@ -192,4 +190,15 @@ export interface NewsItem {
     outlet: string;
     url: string;
   };
+}
+
+export interface NewsGalleryItem {
+  id: string;
+  articleId: string;
+  image: string;
+  year: number;
+  outlet: string;
+  alt: string;
+  caption: string;
+  url: string;
 }

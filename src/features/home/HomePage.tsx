@@ -4,11 +4,11 @@ import {
   EVENT_INFO,
   METRICS_DATA,
   HIGHLIGHTS_DATA,
-  GALLERY_DATA,
   SPONSORS_TIERS,
   FAQ_DATA,
 } from '../../core/constants';
 import { CountdownTimer } from '../../components/CountdownTimer';
+import { NewsGallery } from '../../components/NewsGallery';
 import { img } from '../../core/images';
 import { AnimatedCounter } from '../../components/AnimatedCounter';
 import {
@@ -78,7 +78,6 @@ export const HomePage: React.FC = () => {
     },
   ];
 
-  const [activeGalleryCategory, setActiveGalleryCategory] = useState<string>('todos');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const iconMap: Record<string, React.ReactNode> = {
@@ -89,11 +88,6 @@ export const HomePage: React.FC = () => {
     Sparkles: <Sparkles className="w-6 h-6 text-[#0369A1]" />,
     Trophy: <Trophy className="w-6 h-6 text-[#8A5A04]" />,
   };
-
-  const filteredGallery =
-    activeGalleryCategory === 'todos'
-      ? GALLERY_DATA
-      : GALLERY_DATA.filter((item) => item.category === activeGalleryCategory);
 
   return (
     <div className="space-y-20 pb-16">
@@ -353,86 +347,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =====================================================================
-          4. GALERIA HISTÓRICA 2021–2026
+          4. GALERIA ÔXE MAKER — MEMÓRIA EM IMAGENS
          ===================================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-2 mb-8">
-          <span className="text-xs font-mono-code text-[#0369A1] uppercase font-bold tracking-widest">
-            Memórias & Trajetória
-          </span>
-          <h2 className="text-3xl md:text-4xl font-heading text-[#0B1330] uppercase">
-            Galeria <span className="brand-name">Ôxe Maker</span> (2021–2026)
-          </h2>
-          <p className="text-sm text-slate-400 max-w-xl mx-auto">
-            Registros marcantes de robôs em combate, oficinas cheias de entusiasmo e jovens
-            descobrindo suas vocações científicas.
-          </p>
-        </div>
-
-        {/* Gallery interactive filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {[
-            { id: 'todos', label: 'Todos os Momentos' },
-            { id: 'competicoes', label: 'Torneios & Batalhas' },
-            { id: 'oficinas', label: 'Oficinas Mão na Massa' },
-            { id: 'geek', label: 'Cultura Geek & Cosplay' },
-            { id: 'projetos', label: 'Feira Científica' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveGalleryCategory(tab.id)}
-              className={`px-3 py-1.5 text-xs font-mono-code font-bold uppercase rounded-sm transition-all ${
-                activeGalleryCategory === tab.id
-                  ? 'bg-[#FCC140] text-[#050D34] maker-shadow-cyan'
-                  : 'bg-[#F9FDFE] text-slate-300 hover:text-[#0B1330] border border-slate-700'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Gallery Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredGallery.map((item) => (
-            <div
-              key={item.id}
-              className="bg-[#F9FDFE] border-2 border-slate-700 hover:border-[#01B1FD] rounded-sm p-4 transition-all hover:maker-shadow-cyan group"
-            >
-              {/* Visual illustration / photo placeholder */}
-              <div className="relative aspect-video bg-[#F1F4FB] rounded-sm border border-slate-800 overflow-hidden mb-3">
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1330]/10 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                      <Bot className="w-10 h-10 text-[#0369A1] mb-2 group-hover:scale-110 transition-transform" />
-                      <span className="text-[10px] font-mono-code text-[#8A5A04] uppercase tracking-wider">
-                        Edição {item.year}
-                      </span>
-                      <span className="text-xs font-bold text-[#0B1330] z-10">{item.title}</span>
-                    </div>
-                  </>
-                )}
-              </div>
-
-              <p className="text-xs text-slate-300 font-sans mb-2 leading-relaxed">
-                {item.description}
-              </p>
-              <div className="flex items-center justify-between text-[10px] font-mono-code text-slate-400 border-t border-slate-800 pt-2">
-                <span>{item.caption}</span>
-                <span className="text-[#0369A1] uppercase font-bold">{item.category}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <NewsGallery showCta eyebrow="Galeria Ôxe Maker" title="Memória em Imagens" />
       </section>
 
       {/* =====================================================================

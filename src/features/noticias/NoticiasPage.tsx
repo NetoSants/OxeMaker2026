@@ -1,6 +1,7 @@
 import React from 'react';
 import { EVENT_DATE } from '../../core/eventMeta';
 import { NEWS_DATA } from '../../core/news';
+import { NewsGallery } from '../../components/NewsGallery';
 import { Newspaper, ExternalLink, CalendarDays, ArrowUpRight } from 'lucide-react';
 
 const formatDate = (iso: string) => {
@@ -40,6 +41,8 @@ export const NoticiasPage: React.FC = () => {
           </span>
         </div>
       </div>
+
+      <NewsGallery title="Fotos das Coberturas" />
 
       {/* Timeline */}
       <div className="relative pl-6 sm:pl-8 border-l-2 border-[#01B1FD]/40 space-y-8">

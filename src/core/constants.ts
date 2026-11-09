@@ -10,7 +10,7 @@ import {
   TimelineMilestone,
   FounderTribute,
   SponsorTier,
-  GalleryItem,
+  BrandLogoItem,
 } from './types';
 import { img } from './images';
 import {
@@ -870,63 +870,51 @@ export const SPONSORS_TIERS: SponsorTier[] = [
 
 /**
  * ============================================================================
- * GALERIA HISTÓRICA DE MOMENTOS (2021–2026)
+ * ACERVO DE MARCAS E SELOS DO ÔXE MAKER
  * ============================================================================
  */
-export const GALLERY_DATA: GalleryItem[] = [
+export const BRAND_LOGOS_DATA: BrandLogoItem[] = [
   {
-    id: 'gal-1',
-    title: 'Disputa Intensa no Dohyo de Sumô',
-    year: 2025,
-    category: 'competicoes',
-    description: 'Momento decisivo entre os robôs autônomos da EREM Olinda e ETE Paulista no ginásio lotado.',
-    caption: 'Foto: Arquivo GRE Metro Norte 2025',
+    id: 'marca-06',
     image: img('logo06oxemaker.webp'),
+    label: 'Marca 2026',
+    alt: 'Marca do Ôxe Maker na edição de 2026',
+    caption: 'Edição atual',
   },
   {
-    id: 'gal-2',
-    title: 'Mão na Massa: Montando o Primeiro Circuito',
-    year: 2025,
-    category: 'oficinas',
-    description: 'Estudantes do ensino fundamental testando sensores de luz LDR durante a oficina prática de Arduino.',
-    caption: 'Foto: Laboratório Maker Ôxe Maker',
+    id: 'marca-05',
     image: img('logoOxemaker05.webp'),
+    label: 'Marca 2025',
+    alt: 'Marca do Ôxe Maker na edição de 2025',
+    caption: '5ª edição',
   },
   {
-    id: 'gal-3',
-    title: 'Desfile Cosplay com Torcida Apaixonada',
-    year: 2024,
-    category: 'geek',
-    description: 'O palco do pátio reuniu caracterizações marcantes inspiradas em jogos e heróis da ficção científica.',
-    caption: 'Foto: Palco Geek Ôxe Maker',
+    id: 'marca-04',
     image: img('oxemakerlogo2024.webp'),
+    label: 'Marca 2024',
+    alt: 'Marca do Ôxe Maker na edição de 2024',
+    caption: '4ª edição',
   },
   {
-    id: 'gal-4',
-    title: 'Prototipando com Sucata e Motores Reciclados',
-    year: 2023,
-    category: 'projetos',
-    description: 'Robôs construídos com coolers de computador e caixas de leite demonstrando a força do lixo zero.',
-    caption: 'Foto: Mostra Científica 2023',
+    id: 'acervo-01',
     image: img('oxemaker-logo01.webp'),
+    label: 'Acervo 01',
+    alt: 'Versão histórica da marca Ôxe Maker',
+    caption: 'Identidade histórica',
   },
   {
-    id: 'gal-5',
-    title: 'A Largada do Seguidor de Linha Buzz Line',
-    year: 2024,
-    category: 'competicoes',
-    description: 'Concentração absoluta dos jovens pilotos antes de acionar a chave táctil do robô seguidor.',
-    caption: 'Foto: Pista Alfa de Robótica',
+    id: 'acervo-02',
     image: img('logo01oxemaker.webp'),
+    label: 'Acervo 02',
+    alt: 'Versão histórica da marca Ôxe Maker',
+    caption: 'Identidade histórica',
   },
   {
-    id: 'gal-6',
-    title: 'A Celebração dos Troféus no Pódio Maker',
-    year: 2025,
-    category: 'competicoes',
-    description: 'Equipes de 12 escolas diferentes comemorando juntas com os troféus ecológicos feitos em 3D.',
-    caption: 'Foto: Cerimônia de Premiação 2025',
+    id: 'acervo-03',
     image: img('logooxemaker02.webp'),
+    label: 'Acervo 03',
+    alt: 'Versão histórica da marca Ôxe Maker',
+    caption: 'Identidade histórica',
   },
 ];
 

@@ -4,6 +4,7 @@ import {
   TIMELINE_DATA,
   FOUNDER_TRIBUTE,
   METRICS_DATA,
+  BRAND_LOGOS_DATA,
 } from '../../core/constants';
 import { AnimatedCounter } from '../../components/AnimatedCounter';
 import { img } from '../../core/images';
@@ -18,6 +19,7 @@ import {
   Compass,
   CheckCircle2,
   GraduationCap,
+  Palette,
 } from 'lucide-react';
 
 export const SobrePage: React.FC = () => {
@@ -118,6 +120,52 @@ export const SobrePage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Brand logos archive */}
+      <section className="bg-[#F9FDFE] border-2 border-slate-700/80 rounded-sm p-6 sm:p-10 space-y-6">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-800 pb-4">
+          <div className="space-y-1">
+            <span className="inline-flex items-center gap-2 text-xs font-mono-code text-[#0369A1] uppercase font-bold tracking-widest">
+              <Palette className="w-4 h-4" />
+              Identidade Visual
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-heading text-[#0B1330] uppercase">
+              Acervo de Marcas do <span className="brand-name">Ôxe Maker</span>
+            </h2>
+          </div>
+          <span className="px-2.5 py-1 bg-[#F1F4FB] border border-slate-700 text-[#0369A1] font-mono-code text-[11px] font-bold rounded-sm uppercase tracking-wider">
+            {BRAND_LOGOS_DATA.length} versões
+          </span>
+        </div>
+
+        <p className="text-sm text-slate-300 font-sans leading-relaxed">
+          Diferentes versões da marca e dos selos do Ôxe Maker, reunidas ao longo das edições do
+          projeto.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {BRAND_LOGOS_DATA.map((logo) => (
+            <figure
+              key={logo.id}
+              className="bg-[#F9FDFE] border-2 border-slate-700 hover:border-[#01B1FD] rounded-sm p-4 transition-all hover:maker-shadow-cyan group"
+            >
+              <div className="relative aspect-video bg-[#F1F4FB] rounded-sm border border-slate-800 overflow-hidden mb-3">
+                <img
+                  src={logo.image}
+                  alt={logo.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <figcaption className="flex items-center justify-between gap-3 text-[10px] font-mono-code text-slate-400 border-t border-slate-800 pt-2">
+                <span className="uppercase font-bold text-[#8A5A04]">{logo.label}</span>
+                <span className="uppercase font-bold text-[#0369A1]">{logo.caption}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* Animated Metrics Strip */}
       <div className="space-y-6">
