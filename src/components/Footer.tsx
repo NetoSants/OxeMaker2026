@@ -115,7 +115,6 @@ export const Footer: React.FC = () => {
                   <MapPin className="w-4 h-4 text-[#0369A1] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-[#0B1330] block">{EVENT_INFO.location.venue}</strong>
-                    <p>{EVENT_INFO.location.space}</p>
                     <p>{EVENT_INFO.location.fullAddress}</p>
                   </div>
                 </div>

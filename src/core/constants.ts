@@ -45,7 +45,6 @@ export const EVENT_INFO: EventGeneralInfo = {
   location: {
     venue: 'ETE José de Alencar',
     fullName: 'Escola Técnica Estadual (ETE) José de Alencar Gomes da Silva',
-    space: 'Frente da escola, ginásio, pátio e cafeteria',
     street: 'Rua João Francisco Batista, 170',
     neighborhood: 'Janga',
     city: 'Paulista',

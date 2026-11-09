@@ -85,10 +85,6 @@ export const MapaPage: React.FC = () => {
             <p className="text-base text-slate-200 font-sans">
               {EVENT_INFO.location.fullAddress}
             </p>
-            <div className="p-3 bg-[#F1F4FB] border border-slate-700 rounded-sm text-xs text-slate-300 space-y-1">
-              <strong className="text-[#0B1330] block font-mono-code">Espaços do Evento:</strong>
-              <p>{EVENT_INFO.location.space}</p>
-            </div>
           </div>
 
           <div className="space-y-3 pt-4 border-t border-slate-700/80">

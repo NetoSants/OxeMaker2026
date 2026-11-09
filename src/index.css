@@ -336,6 +336,7 @@ html.dark .group:hover .group-hover\:text-\[\#8A5A04\] { color: #FCC140; }
 
 /* Degradês de superfície */
 html.dark .from-\[\#F9FDFE\] { --tw-gradient-from: #1E292D; }
+html.dark .via-\[\#F9FDFE\] { --tw-gradient-via: #15203F; }
 html.dark .via-\[\#EDF1FA\] { --tw-gradient-via: #15203F; }
 html.dark .to-\[\#C8D8F4\] { --tw-gradient-to: #0030B5; }
 

@@ -116,7 +116,7 @@ export const InscricoesPage: React.FC = () => {
         </p>
       </header>
 
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#FCC140]/20 via-[#F9FDFE] to-[#01B1FD]/15 border-2 border-[#FCC140] rounded-sm p-5 sm:p-7 maker-shadow-yellow">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#FCC140]/20 via-[#EDF1FA] to-[#01B1FD]/15 border-2 border-[#FCC140] rounded-sm p-5 sm:p-7 maker-shadow-yellow">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
           <div className="space-y-2">
             <span className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#FCC140]/20 text-[#8A5A04] font-mono-code text-[11px] font-bold uppercase rounded-sm border border-[#FCC140]/60">
@@ -185,7 +185,7 @@ export const InscricoesPage: React.FC = () => {
               onClick={() => scrollToTopic(topic.id)}
               className={`group border-2 rounded-sm p-6 transition-all hover:maker-shadow-yellow flex flex-col gap-3 text-left cursor-pointer ${
                 isVisitor
-                  ? 'bg-gradient-to-br from-[#FCC140]/20 via-[#F9FDFE] to-[#01B1FD]/10 border-[#FCC140] maker-shadow-yellow'
+                  ? 'bg-gradient-to-br from-[#FCC140]/20 via-[#EDF1FA] to-[#01B1FD]/10 border-[#FCC140] maker-shadow-yellow'
                   : 'bg-[#F9FDFE] border-slate-700/80 hover:border-[#FCC140]'
               }`}
             >

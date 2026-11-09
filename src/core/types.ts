@@ -16,7 +16,6 @@ export interface EventGeneralInfo {
   location: {
     venue: string;
     fullName: string;
-    space: string;
     street: string;
     neighborhood: string;
     city: string;
